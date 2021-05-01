@@ -5,11 +5,26 @@ import ProductCard from "./ProductCard";
 import "./styles/Product.css";
 
 const Products = () => {
-  const [products, setProducts] = useState(productDetails);
-  const [searchValue, setsearchValue] = useState("S");
+  let [products, setProducts] = useState(productDetails);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleSearchChange = (e) => {
-    setsearchValue(e.target.value);
+    setSearchValue(e.target.value);
+  };
+
+  const selectCategory = (e) => {
+    e.preventDefault();
+    if (e.target.value === "all") {
+      console.log("all");
+      setProducts(productDetails);
+    } else {
+      products = productDetails;
+      setProducts(
+        products.filter((product) => {
+          return product.category === e.target.value;
+        })
+      );
+    }
   };
 
   return (
@@ -22,10 +37,18 @@ const Products = () => {
           onChange={(e) => handleSearchChange(e)}
         />
         <div className="category">
-          <button>All</button>
-          <button>Electronics</button>
-          <button>Fashion</button>
-          <button>Furniture</button>
+          <button onClick={(e) => selectCategory(e)} value="all">
+            All
+          </button>
+          <button onClick={(e) => selectCategory(e)} value="Electronics">
+            Electronics
+          </button>
+          <button onClick={(e) => selectCategory(e)} value="Fashion">
+            Fashion
+          </button>
+          <button onClick={(e) => selectCategory(e)} value="Furniture">
+            Furniture
+          </button>
         </div>
       </form>
       <div className="products-container">
@@ -36,7 +59,7 @@ const Products = () => {
               .includes(searchValue.toLowerCase());
           })
           .map((product) => {
-            return <ProductCard product={product} />;
+            return <ProductCard product={product} key={product.id} />;
           })}
       </div>
     </div>

@@ -11,7 +11,7 @@ const products = [
   {
     id: 2,
     imgurl:
-      "https://static.techspot.com/images/products/2020/laptops/org/2020-07-01-product.jpg",
+      "https://res-1.cloudinary.com/grover/image/upload/e_trim/c_limit,f_auto,fl_png8.lossy,h_1920,q_auto,w_1920/v1588845584/uvi02qqeqh9flcssawfu.png",
     name: "Razer Blade 15",
     price: "$1250",
     category: "Electronics",
