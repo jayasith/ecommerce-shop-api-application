@@ -14,6 +14,7 @@ public class Product {
     @Id
     private String id;
     private String sellerId;
+    private String imgurl;
     private String name;
     private String quantity;
     private String price;

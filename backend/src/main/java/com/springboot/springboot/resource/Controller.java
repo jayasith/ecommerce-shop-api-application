@@ -24,13 +24,13 @@ public class Controller {
     private productRepository productRepo;
 
 
-    @PostMapping("/sellerreg")
+    @PostMapping("/sellers")
     public String SellerRegister(@RequestBody Seller seller){
         sellerRepo.save(seller);
         return "id :"+seller.getId()+"added";
     }
 
-    @PostMapping("/buyerreg")
+    @PostMapping("/buyers")
     public String BuyerRegister(@RequestBody Buyer buyer){
         buyerRepo.save(buyer);
         return "id :"+buyer.getId()+"added";
@@ -64,12 +64,12 @@ public class Controller {
         return "username doesn't exist";
     }
 
-    @GetMapping("/allproducts")
+    @GetMapping("/products")
     public List<Product> getAllProducts(){
         return productRepo.findAll();
     }
 
-    @PostMapping("/addproducts")
+    @PostMapping("/products")
     public String addProduct(@RequestBody Product product){
         productRepo.save(product);
 
@@ -96,6 +96,7 @@ public class Controller {
 
     @PostMapping("/order")
     public String addOrder(@RequestBody Order order){
+
         orderRepo.save(order);
         return "order added";
     }
