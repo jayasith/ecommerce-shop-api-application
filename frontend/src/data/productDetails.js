@@ -11,7 +11,7 @@ const products = [
   {
     id: 2,
     imgurl:
-      "https://boutikmundo.com/wp-content/uploads/2021/02/Razer-Blade-15-Advanced-156-Gaming-Laptop.jpg",
+      "https://static.techspot.com/images/products/2020/laptops/org/2020-07-01-product.jpg",
     name: "Razer Blade 15",
     price: "$1250",
     category: "Electronics",
