@@ -13,11 +13,11 @@ function App() {
           <Home />
         </Route>
         <Route path="/buyer-register">
-          <Form fetchEndpoint="buyerreg" title="Register" isRegisterForm />
+          <Form fetchEndpoint="buyers" title="Register" isRegisterForm />
         </Route>
         <Route path="/seller-register">
           <Form
-            fetchEndpoint="sellerreg"
+            fetchEndpoint="sellers"
             title="Seller Register"
             isRegisterForm
           />

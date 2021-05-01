@@ -41,3 +41,10 @@ input {
 form button {
   width: 100%;
 }
+
+#seller {
+  width: 1rem;
+  height: 1rem;
+  margin-bottom: 0;
+  margin-right: 1rem;
+}

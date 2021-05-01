@@ -21,7 +21,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
 
     try {
       const response = await fetch(
-        `http://localhost:8191/rest/${fetchEndpoint}/`,
+        `http://localhost:9090/rest/${fetchEndpoint}/`,
         {
           method: "POST",
           headers: {
@@ -76,11 +76,24 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
+        <div
+          className="check"
+          style={{
+            display: "flex",
+            width: "100%",
+            alignItems: "center",
+            paddingBottom: "2rem",
+          }}
+        >
+          <input type="checkbox" name="seller" id="seller" />
+          <label htmlFor="seller">Login as a seller</label>
+        </div>
         {isRegisterForm ? (
           <div className="email">
             <label htmlFor="name">Email</label>
             <input
               type="email"
+              typeof="email"
               name="email"
               id="email"
               required
