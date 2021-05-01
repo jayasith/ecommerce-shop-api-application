@@ -14,6 +14,8 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
 
   const history = useHistory();
 
+  document.title = title;
+
   const handleRegister = async (e) => {
     e.preventDefault();
     const newUser = { username, password, email };

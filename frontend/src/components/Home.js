@@ -6,6 +6,8 @@ import "./styles/Home.css";
 import LandingImg from "../assets/landing-image.png";
 
 const Home = () => {
+  document.title = "SHOP";
+
   return (
     <div className="content-section">
       <div className="text-content">

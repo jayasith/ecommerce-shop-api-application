@@ -8,6 +8,8 @@ const Products = () => {
   let [products, setProducts] = useState(productDetails);
   const [searchValue, setSearchValue] = useState("");
 
+  document.title = "Products";
+
   const handleSearchChange = (e) => {
     setSearchValue(e.target.value);
   };

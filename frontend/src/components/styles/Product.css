@@ -70,7 +70,7 @@
   padding: 1rem;
   text-align: center;
   box-shadow: none;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 .product-page-container form input {
@@ -83,5 +83,17 @@
   padding-top: 1rem;
   width: 20%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+}
+
+.category button {
+  background: #475ab2;
+  outline: none;
+  border: none;
+  margin: 0 0.5rem;
+  padding: 0.3rem 1rem;
+  font-weight: 500;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
 }
