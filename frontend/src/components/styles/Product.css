@@ -1,0 +1,87 @@
+.product-list-container {
+  width: 100%;
+  margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+
+.product-container {
+  background: rgb(255, 255, 255);
+  min-height: 250px;
+  max-width: 300px;
+  border-radius: 5px;
+  padding: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  margin: 2rem 1.5rem;
+  box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.1);
+}
+
+.product-container:hover,
+.product-container:focus {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.2);
+}
+
+.product-container img {
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product-container h3 {
+  font-weight: 600;
+  padding: 1rem 0 0.2rem 0;
+}
+
+.product-container p {
+  color: #929292;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.products-container {
+  padding-top: 1rem;
+  margin: 0 auto;
+  width: 1400px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.action-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.buy-now {
+  padding: 0.4rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.product-page-container form {
+  width: 100%;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: none;
+  margin-top: 4rem;
+}
+
+.product-page-container form input {
+  width: 50%;
+  margin: 0;
+}
+
+.category {
+  margin: 0 auto;
+  padding-top: 1rem;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+}

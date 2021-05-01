@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Form from "./components/Form";
+import Products from "./components/Products";
 
 function App() {
   return (
@@ -24,6 +25,9 @@ function App() {
         </Route>
         <Route path="/login">
           <Form fetchEndpoint="login" title="Login" isRegisterForm={false} />
+        </Route>
+        <Route path="/products">
+          <Products />
         </Route>
       </Switch>
     </div>
