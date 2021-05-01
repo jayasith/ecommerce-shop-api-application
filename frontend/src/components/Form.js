@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { ToastContainer, toast, Bounce } from "react-toastify";
+import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/Form.css";
@@ -14,7 +14,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
 
   const history = useHistory();
 
-  const handleSubmit = async (e) => {
+  const handleRegister = async (e) => {
     e.preventDefault();
     const newUser = { username, password, email };
     setIsAdding(true);
@@ -38,6 +38,9 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
         setEmail("");
         setIsAdding(false);
         toast.success("Your account has been created");
+        setTimeout(() => {
+          history.push("/login");
+        }, 5000);
       } else {
         toast.error("Something went wrong!");
       }
@@ -50,7 +53,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   return (
     <div className="form-container">
       <h2>{title}</h2>
-      <form className="register-form" onSubmit={handleSubmit}>
+      <form className="register-form" onSubmit={handleRegister}>
         <div className="username">
           <label htmlFor="username">Username</label>
           <input
@@ -79,7 +82,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
             <input
               type="email"
               name="email"
-              id="emaile"
+              id="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
