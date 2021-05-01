@@ -38,9 +38,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
         setEmail("");
         setIsAdding(false);
         toast.success("Your account has been created");
-        setTimeout(() => {
-          history.push("/login");
-        }, 5000);
+        history.push("./login");
       } else {
         toast.error("Something went wrong!");
       }
@@ -76,18 +74,22 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
             onChange={(e) => setPassword(e.target.value)}
           ></input>
         </div>
-        <div
-          className="check"
-          style={{
-            display: "flex",
-            width: "100%",
-            alignItems: "center",
-            paddingBottom: "2rem",
-          }}
-        >
-          <input type="checkbox" name="seller" id="seller" />
-          <label htmlFor="seller">Login as a seller</label>
-        </div>
+        {!isRegisterForm ? (
+          <div
+            className="check"
+            style={{
+              display: "flex",
+              width: "100%",
+              alignItems: "center",
+              paddingBottom: "2rem",
+            }}
+          >
+            <input type="checkbox" name="seller" id="seller" />
+            <label htmlFor="seller">Login as a seller</label>
+          </div>
+        ) : (
+          ""
+        )}
         {isRegisterForm ? (
           <div className="email">
             <label htmlFor="name">Email</label>
