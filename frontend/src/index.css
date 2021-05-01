@@ -1,0 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+header {
+  box-shadow: 5px 5px 100px rgba(0, 0, 0, 0.1);
+}
+
+.shop-name {
+  font-size: 1.6rem;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 10vh;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  padding: 0 1rem;
+  margin-left: 2rem;
+}
+
+a {
+  font-weight: 500;
+  display: inline-block;
+}
+
+.content-section {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.important {
+  background: #24346a;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: 2px solid #24346a;
+  border-radius: 5px;
+}
+
+.less-important {
+  border: 2px solid #24346a;
+  padding: 0.8rem 2rem;
+  border-radius: 5px;
+}
+
+.margin-right {
+  margin-right: 1rem;
+}
+
+.filled-button {
+  outline: none;
+  border: none;
+  background: #24346a;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease-in-out;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.landing-img {
+  width: 40rem;
+  padding-top: 7rem;
+}
+
+.content-section {
+  display: flex;
+  justify-content: space-between;
+}
