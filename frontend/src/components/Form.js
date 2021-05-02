@@ -74,7 +74,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-          ></input>
+          />
         </div>
         {!isRegisterForm ? (
           <div

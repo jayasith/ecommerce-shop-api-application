@@ -1,6 +1,8 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+
   return (
     <header>
       <div className="nav-container">
@@ -8,12 +10,32 @@ const Navbar = () => {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              {location.pathname === "/products" ||
+              location.pathname === "/orders" ? (
+                <Link to="/products">Products</Link>
+              ) : (
+                <Link to="/">Home</Link>
+              )}
             </li>
             <li>
-              <Link to="/seller-register" className="important">
-                Register as Seller
-              </Link>
+              {location.pathname === "/products" ||
+              location.pathname === "/orders" ? (
+                <Link to="/orders">Orders</Link>
+              ) : (
+                ""
+              )}
+            </li>
+            <li>
+              {location.pathname === "/products" ||
+              location.pathname === "/orders" ? (
+                <Link to="/" className="important">
+                  Logout
+                </Link>
+              ) : (
+                <Link to="/seller-register" className="important">
+                  Register as Seller
+                </Link>
+              )}
             </li>
           </ul>
         </nav>
