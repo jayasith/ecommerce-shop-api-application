@@ -1,4 +1,6 @@
 import React from "react";
+import { FaCartPlus } from "react-icons/fa";
+
 import "./styles/Product.css";
 
 const ProductCard = ({ product }) => {
@@ -11,7 +13,9 @@ const ProductCard = ({ product }) => {
       <p>{product.description}</p>
       <div className="action-container">
         <p className="price">{product.price}.00</p>
-        <button className="important buy-now">Buy now</button>
+        <button className="important buy-now">
+          <FaCartPlus style={{ fontSize: "1rem" }} />
+        </button>
       </div>
     </div>
   );
