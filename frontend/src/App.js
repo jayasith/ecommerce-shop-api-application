@@ -4,6 +4,8 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Form from "./components/Form";
 import Products from "./components/Products";
+import DeliveryForm from "./components/DeliveryForm";
+
 
 function App() {
   return (
@@ -28,6 +30,9 @@ function App() {
         </Route>
         <Route path="/products">
           <Products />
+        </Route>
+        <Route path="/delivery">
+          <DeliveryForm />
         </Route>
       </Switch>
     </div>
