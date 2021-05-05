@@ -19,15 +19,13 @@ const removeProductsFromCart = (state, productID) => {
   const copy = [...state.carts];
   const currentItemIndex = copy.findIndex((i) => i.product.id === productID);
 
-  if (currentItemIndex > 0) {
-    const currentItem = { ...copy[currentItemIndex] };
-    currentItem.quantity--;
+  const currentItem = { ...copy[currentItemIndex] };
+  currentItem.quantity--;
 
-    if (currentItem === 0) {
-      copy.splice(currentItem, 1);
-    } else {
-      copy[currentItemIndex] = currentItem;
-    }
+  if (currentItem.quantity <= 0) {
+    copy.splice(currentItemIndex, 1);
+  } else {
+    copy[currentItemIndex] = currentItem;
   }
 
   return { ...state, carts: copy };
