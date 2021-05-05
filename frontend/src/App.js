@@ -7,7 +7,6 @@ import Products from "./components/Products";
 import DeliveryForm from "./components/DeliveryForm";
 import AddItems from "./components/AddItems";
 
-
 function App() {
   return (
     <div className="App">
