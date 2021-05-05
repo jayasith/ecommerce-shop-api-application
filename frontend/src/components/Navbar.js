@@ -42,7 +42,6 @@ const Navbar = () => {
                 }}
                 onClick={() => {
                   isToggle ? setIsToggle(false) : setIsToggle(true);
-                  console.log(isToggle);
                 }}
               >
                 <FaShoppingCart style={{ fontSize: "1.2rem" }} />
