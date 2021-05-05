@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Home from "./components/Home";
@@ -5,12 +6,18 @@ import Navbar from "./components/Navbar";
 import Form from "./components/Form";
 import Products from "./components/Products";
 import DeliveryForm from "./components/DeliveryForm";
+import Cart from "./components/Cart";
 
+const CartContext = React.createContext("");
+
+const handleCartClick = () => {};
 
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <CartContext.Provider value={"close"}>
+        <Navbar />
+      </CartContext.Provider>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -30,6 +37,9 @@ function App() {
         </Route>
         <Route path="/products">
           <Products />
+          <Route path="/cart">
+            <Cart />
+          </Route>
         </Route>
         <Route path="/delivery">
           <DeliveryForm />

@@ -1,7 +1,10 @@
 import { Link, useLocation } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
+import { useContext } from "react";
 
 const Navbar = () => {
   const location = useLocation();
+  // const cartIsOpen = useContext(CartContext);
 
   return (
     <header>
@@ -25,6 +28,17 @@ const Navbar = () => {
                 ""
               )}
             </li>
+            {location.pathname === "/products" && (
+              <li>
+                <Link
+                  to="/products/cart"
+                  style={{ display: "flex", alignItems: "center" }}
+                >
+                  <FaShoppingCart style={{ fontSize: "1.2rem" }} />
+                  <p style={{ paddingLeft: ".6rem" }}>0</p>
+                </Link>
+              </li>
+            )}
             <li>
               {location.pathname === "/products" ||
               location.pathname === "/orders" ? (

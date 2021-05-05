@@ -4,7 +4,7 @@ const products = [
     imgurl:
       "https://image-cdn.beforward.jp/autoparts/original/202005/36083917/00000008058492_a01.jpg",
     name: "Surface Headphones 2",
-    price: "$250",
+    price: "LKR 25000",
     category: "Electronics",
     description: "Microsoft surface headphones with minimal and sleek design.",
   },
@@ -13,7 +13,7 @@ const products = [
     imgurl:
       "https://res-1.cloudinary.com/grover/image/upload/e_trim/c_limit,f_auto,fl_png8.lossy,h_1920,q_auto,w_1920/v1588845584/uvi02qqeqh9flcssawfu.png",
     name: "Razer Blade 15",
-    price: "$1250",
+    price: "LKR 225000",
     category: "Electronics",
     description: "Razer blade 15 with minimal and sleek design.",
   },
@@ -22,7 +22,7 @@ const products = [
     imgurl:
       "https://fossil.scene7.com/is/image/FossilPartners/FS5305_main?$sfcc_fos_hi-res$",
     name: "FOSSIL Men's Watch",
-    price: "$150",
+    price: "LKR 5000",
     category: "Fashion",
     description: "FOSSIL men's watch with brown leather strips.",
   },
@@ -31,7 +31,7 @@ const products = [
     imgurl:
       "https://www.charleskeith.com/dw/image/v2/BCWJ_PRD/on/demandware.static/-/Sites-ck-products/default/dw0a20485a/images/hi-res/2020-L3-CK2-30270508-1-20-1.jpg?sw=1152&sh=1536",
     name: "Double Handle Tote Bag",
-    price: "$275",
+    price: "LKR 2750",
     category: "Fashion",
     description:
       "Charles & Keith double handle tote bag with peach shade colors.",
@@ -41,7 +41,7 @@ const products = [
     imgurl:
       "https://cdn.shopify.com/s/files/1/0276/8987/7642/products/markusOfficechair_Vissledarkgrey1_resultmarkusOfficechair_Vissledarkgrey1.webp_1024x1024.png?v=1587036114",
     name: "MARKUS Office Chair",
-    price: "$375",
+    price: "LKR 37500",
     category: "Furniture",
     description: "Office chair with minimal blacked out design.",
   },
@@ -50,7 +50,7 @@ const products = [
     imgurl:
       "https://assets.weimgs.com/weimgs/ab/images/wcm/products/202014/0070/mid-century-upholstered-dining-chair-wooden-legs-c.jpg",
     name: "Upholstered Chair",
-    price: "$200",
+    price: "LKR 2000",
     category: "Furniture",
     description: "Upholstered chairs with minimal design.",
   },

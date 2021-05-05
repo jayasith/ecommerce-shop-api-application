@@ -1,0 +1,18 @@
+.cart-container {
+  background: white;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  width: 30%;
+  min-height: 100vh;
+  position: fixed;
+  top: 0%;
+  right: 0%;
+  padding: 2rem;
+}
+
+.close {
+  transform: translateX(100%);
+}
+
+.open {
+  transform: translateX(-100%);
+}
