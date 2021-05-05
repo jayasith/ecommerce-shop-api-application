@@ -4,6 +4,8 @@ import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import Form from "./components/Form";
 import Products from "./components/Products";
+import OrderList from "./components/OrderList";
+import Order from "./components/Order";
 import DeliveryForm from "./components/DeliveryForm";
 import AddItems from "./components/AddItems";
 import Payment from "./components/PaymentMethods"
@@ -31,6 +33,12 @@ function App() {
         </Route>
         <Route path="/products">
           <Products />
+        </Route>
+        <Route path="/order">
+          <Order/>
+        </Route>
+        <Route path="/orders">
+          <OrderList/>
         </Route>
         <Route path="/delivery">
           <DeliveryForm />
