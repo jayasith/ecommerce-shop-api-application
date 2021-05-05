@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  font-family: "Quicksand";
+  color: #333;
+}
+
+.Order {
+  max-width: 1000px;
+  margin: auto auto;
+  padding: 20px;
+  display: flexbox;
+}
+
+/*  list */
+.item {
+  padding: 10px 10px;
+  margin-block-start: 5rem;
+  border-bottom: 2px solid #9baba9;
+  border-top: 2px solid #9baba9;
+  background-color: #f0f0f2;
+}
+
+.item-list {
+  margin-top: 5rem;
+  background-color: #f0f0f2;
+  padding: 100px 100px;
+  justify-content: space-between;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item img {
+  max-width: 100px;
+  max-height: 100px;
+}
+.item-list:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.item p {
+  font-size: 15px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.status {
+  background-color: #24346a;
+  color: rgb(255, 255, 255);
+  padding: 15px 15px;
+
+  text-align: center;
+  margin-top: 60px;
+}
+
+.status h4 {
+  color: rgb(255, 255, 255);
+}
+
+.table td {
+  text-align: center;
+  width: 250px;
+  height: 50px;
+  padding: 10px auto;
+  border-bottom: 1px solid #ffffff;
+  border-top: 1px solid #ffffff;
+  background-color: #d8e0df;
+  font-size: 15px;
+  font-weight: bold;
+}
+.table th {
+  background-color: #24346a;
+  width: 250px;
+  text-align: center;
+  height: 50px;
+  color: white;
+  font-size: 20px;
+  border-bottom: 1px solid #9baba9;
+  border-top: 1px solid #9baba9;
+}
+
+.table {
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.orderList {
+  max-width: 1000px;
+  margin: 120px auto;
+  padding: 125px;
+  background-color: rgb(245, 245, 245);
+  border-radius: 0.5;
+}
+
+.orderList:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.table:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
