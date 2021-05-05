@@ -1,6 +1,5 @@
 import React, { useReducer } from "react";
 
-import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_ALL_FROM_CART } from "./types";
 import products from "../../data/productDetails";
 import CartContext from "./CartContext";
 import Reducer from "./Reducer";

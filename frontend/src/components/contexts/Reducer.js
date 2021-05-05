@@ -1,5 +1,3 @@
-import { ADD_TO_CART, REMOVE_FROM_CART, CLEAR_ALL_FROM_CART } from "./types";
-
 const addProductToCart = (state, product) => {
   const copy = [...state.carts];
   const currentItemIndex = copy.findIndex((i) => i.product.id === product.id);

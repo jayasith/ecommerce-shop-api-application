@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import React, { useState, useContext } from "react";
+import { ToastContainer } from "react-toastify";
 import productDetails from "../data/productDetails";
 import ProductCard from "./ProductCard";
 
@@ -15,10 +15,6 @@ const Products = () => {
   const handleAddProduct = (product) => {
     context.addProductToCart(product);
   };
-
-  useEffect(() => {
-    console.log(context);
-  }, [context]);
 
   document.title = "Products";
 
