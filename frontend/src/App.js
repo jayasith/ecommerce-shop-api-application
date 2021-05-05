@@ -8,6 +8,7 @@ import OrderList from "./components/OrderList";
 import Order from "./components/Order";
 import DeliveryForm from "./components/DeliveryForm";
 import AddItems from "./components/AddItems";
+import Payment from "./components/PaymentMethods"
 
 function App() {
   return (
@@ -44,6 +45,9 @@ function App() {
         </Route>
         <Route path="/additems">
           <AddItems />
+        </Route>
+        <Route path="/payment">
+          <Payment/>
         </Route>
       </Switch>
     </div>
