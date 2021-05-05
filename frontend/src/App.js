@@ -6,6 +6,8 @@ import Form from "./components/Form";
 import Products from "./components/Products";
 import OrderList from "./components/OrderList";
 import Order from "./components/Order";
+import DeliveryForm from "./components/DeliveryForm";
+import AddItems from "./components/AddItems";
 
 function App() {
   return (
@@ -36,6 +38,12 @@ function App() {
         </Route>
         <Route path="/orders">
           <OrderList/>
+        </Route>
+        <Route path="/delivery">
+          <DeliveryForm />
+        </Route>
+        <Route path="/additems">
+          <AddItems />
         </Route>
       </Switch>
     </div>
