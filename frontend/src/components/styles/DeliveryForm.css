@@ -1,0 +1,51 @@
+
+.btn  {
+    background-color: #0c00af;
+    border: none;
+    color: white;
+    padding: 15px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    box-shadow: 0 10px 30px 0 rgba(83, 71, 255, 0.459);
+    border-radius: 5px 5px 5px 5px;
+    margin: 5px 20px 40px 20px;
+    cursor: pointer;
+  }
+  
+  .btn:hover  {
+    background-color: #24346a;
+  }
+  form {
+    width: 700px;
+   
+    box-shadow: 0px 0px 30px 2px rgba(0, 0, 0, 0.1);
+    padding: 70px;
+    border-radius: 5px;
+  }
+.p1{
+    padding-top:1px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 480px;
+  border: 1px;
+}
+input {
+    margin-bottom: 2rem;
+    padding: 0.4rem 1rem;
+    width: 100%;
+    font-size: 1rem;
+  }
+.fname{
+    width:75%;
+}
+  select{
+    
+        margin-bottom: 2rem;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        font-size: 1rem;
+      
+  }

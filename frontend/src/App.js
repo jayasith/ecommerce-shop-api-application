@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Form from "./components/Form";
 import Products from "./components/Products";
 import DeliveryForm from "./components/DeliveryForm";
+import AddItems from "./components/AddItems";
 
 function App() {
   return (
@@ -32,6 +33,9 @@ function App() {
         </Route>
         <Route path="/delivery">
           <DeliveryForm />
+        </Route>
+        <Route path="/additems">
+          <AddItems />
         </Route>
       </Switch>
     </div>
