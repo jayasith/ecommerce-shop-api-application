@@ -16,7 +16,7 @@ h1{
 
 .cardIcon{
     position: absolute;
-    top: 134px;
+    top: 130px;
     left: 260px;
     width: 35px;
     height: 35px;
@@ -33,7 +33,7 @@ h1{
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 244px;
+    top: 235px;
     left: 144px;
 }
 
@@ -73,7 +73,7 @@ input{
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 245px;
+    top: 236px;
     left: 279px;
 
 }
@@ -101,7 +101,7 @@ input{
     width: 25px;
     height: 25px;
     position: absolute;
-    top: 123px;
+    top: 120px;
     left: 274px;
 }
 
@@ -127,7 +127,7 @@ input{
     height: 30px;
     position: absolute;
     left: 120px;
-    top: 122px;
+    top: 118px;
 }
 
 .backBt{
