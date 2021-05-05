@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
+
 import Cart from "./Cart";
+import CartContext from "./contexts/CartContext";
 
 const Navbar = () => {
   const location = useLocation();
   const [isToggle, setIsToggle] = useState(false);
+
+  const context = useContext(CartContext);
 
   return (
     <header>
@@ -30,28 +34,30 @@ const Navbar = () => {
               )}
             </li>
             {location.pathname === "/products" && (
-              <li>
-                <Link style={{ display: "flex", alignItems: "center" }}>
-                  <FaShoppingCart
-                    style={{ fontSize: "1.2rem" }}
-                    onClick={() => {
-                      isToggle ? setIsToggle(false) : setIsToggle(true);
-                      console.log(isToggle);
-                    }}
-                  />
-                  <p
-                    style={{
-                      marginLeft: ".6rem",
-                      fontSize: "0.8rem",
-                      padding: "0.2rem 0.5rem",
-                      borderRadius: "50%",
-                      background: "#ef233c",
-                      color: "white",
-                    }}
-                  >
-                    0
-                  </p>
-                </Link>
+              <li
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  isToggle ? setIsToggle(false) : setIsToggle(true);
+                  console.log(isToggle);
+                }}
+              >
+                <FaShoppingCart style={{ fontSize: "1.2rem" }} />
+                <p
+                  style={{
+                    marginLeft: ".6rem",
+                    fontSize: "0.8rem",
+                    padding: "0.2rem 0.5rem",
+                    borderRadius: "50%",
+                    background: "#ef233c",
+                    color: "white",
+                  }}
+                >
+                  {context.carts.length}
+                </p>
               </li>
             )}
             <li>
@@ -69,7 +75,13 @@ const Navbar = () => {
           </ul>
         </nav>
       </div>
-      <Cart isToggle={isToggle} setIsToggle={setIsToggle} />
+      <Cart
+        isToggle={isToggle}
+        setIsToggle={setIsToggle}
+        carts={context.carts}
+        removeProductFromCart={context.removeProductFromCart}
+        clearCart={context.clearCart}
+      />
     </header>
   );
 };

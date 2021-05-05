@@ -1,11 +1,29 @@
 import { FaTimes } from "react-icons/fa";
+import CartItem from "./CartItem";
 
 import "./styles/Cart.css";
 
-const Cart = ({ isToggle, setIsToggle }) => {
+const Cart = ({
+  isToggle,
+  setIsToggle,
+  carts,
+  removeProductFromCart,
+  clearCart,
+}) => {
   return (
     <div className={`cart-container ${isToggle ? "open" : "close"}`}>
-      <h3>Added Items</h3>
+      <h3>Your Cart</h3>
+      <p
+        style={{
+          textAlign: "center",
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+        }}
+      >
+        {carts.length === 0 ? "No items in the cart" : ""}
+      </p>
       <FaTimes
         style={{
           position: "absolute",
@@ -16,6 +34,23 @@ const Cart = ({ isToggle, setIsToggle }) => {
         }}
         onClick={() => (isToggle ? setIsToggle(false) : setIsToggle(true))}
       />
+      <div className="cart-items-container">
+        {carts.map((cart) => {
+          return (
+            <CartItem
+              cart={cart}
+              removeProductFromCart={removeProductFromCart}
+            />
+          );
+        })}
+      </div>
+      {carts.length !== 0 ? (
+        <button className="important clear-all" onClick={clearCart}>
+          Clear Cart
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

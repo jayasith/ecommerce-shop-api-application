@@ -3,7 +3,7 @@ import { FaCartPlus } from "react-icons/fa";
 
 import "./styles/Product.css";
 
-const ProductCard = ({ product }) => {
+const ProductCard = ({ product, addProductToCart }) => {
   return (
     <div className="product-container">
       <div className="product-img-container">
@@ -12,8 +12,13 @@ const ProductCard = ({ product }) => {
       <h3>{product.name}</h3>
       <p>{product.description}</p>
       <div className="action-container">
-        <p className="price">{product.price}.00</p>
-        <button className="important buy-now">
+        <p className="price">LKR {product.price}</p>
+        <button
+          className="important buy-now"
+          onClick={() => {
+            addProductToCart({ ...product });
+          }}
+        >
           <FaCartPlus style={{ fontSize: "1rem" }} />
         </button>
       </div>

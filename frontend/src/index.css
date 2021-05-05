@@ -69,6 +69,7 @@ a {
   padding: 0.75rem 2rem;
   border: 2px solid #24346a;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .less-important {
