@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import productDetails from "../data/productDetails";
 import ProductCard from "./ProductCard";
 
@@ -41,6 +42,7 @@ const Products = () => {
 
   return (
     <div className="product-page-container">
+      <ToastContainer position="top-center" autoClose={2000} />
       <form>
         <input
           type="text"

@@ -105,3 +105,8 @@ a {
   display: flex;
   justify-content: space-between;
 }
+
+#price {
+  padding-left: 0;
+  font-size: 1.2rem;
+}
