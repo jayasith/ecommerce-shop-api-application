@@ -41,7 +41,7 @@ function App() {
           <OrderList/>
         </Route>
         <Route path="/delivery">
-          <DeliveryForm />
+          <DeliveryForm isDeliveryForm/>
         </Route>
         <Route path="/additems">
           <AddItems />
