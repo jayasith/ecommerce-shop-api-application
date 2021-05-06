@@ -1,4 +1,5 @@
 import { FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 
 import "./styles/Cart.css";
@@ -48,6 +49,18 @@ const Cart = ({
         <button className="important clear-all" onClick={clearCart}>
           Clear Cart
         </button>
+      ) : (
+        ""
+      )}
+      {carts.length !== 0 ? (
+        <Link to="/delivery">
+          <button
+            className="important clear-all"
+            onClick={() => setIsToggle(false)}
+          >
+            Proceed to Checkout
+          </button>
+        </Link>
       ) : (
         ""
       )}
