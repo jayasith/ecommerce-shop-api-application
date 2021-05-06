@@ -31,6 +31,7 @@ const CartState = (props) => {
         products: products,
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,
+        address:{},
         clearCart: clearCart,
         carts: state.carts,
       }}

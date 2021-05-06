@@ -22,7 +22,7 @@ function AddCardForm() {
                     <input type="text" placeholder="cvc" className="cvcInput" required />
                     <MdLockOutline className="lockIcon" />
                     <br/>
-                    <button className="payBt">PAY</button>
+                    <button type="submit" onClick={console.log("onclick")} className="payBt">PAY</button>
                 </form>
             </div>
         </div>

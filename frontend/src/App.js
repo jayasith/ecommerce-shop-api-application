@@ -41,12 +41,13 @@ function App() {
           <OrderList/>
         </Route>
         <Route path="/delivery">
-          <DeliveryForm isDeliveryForm/>
+         
         </Route>
         <Route path="/additems">
           <AddItems />
         </Route>
         <Route path="/payment">
+           <DeliveryForm isDeliveryForm/>
           <Payment/>
         </Route>
       </Switch>
