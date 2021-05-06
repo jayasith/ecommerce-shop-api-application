@@ -1,11 +1,15 @@
-import React, { useState }from 'react'
+import React, { useContext, useState }from 'react'
 import "./styles/Payment.css";
 import  Cardimg from "../assets/credit_card_logo.png";
 import Ispimg from  "../assets/isp_logos.png";
 import Popup from "./Popup.js";
 import Paymentsummery from "./PaymentSummery.js"
+import CartContext from "./contexts/CartContext";
+
 
 function PayMethod(){
+
+    const context = useContext(CartContext);
 
     const [Bttpopup,setBtpopup] = useState(false);
     const [CardPopup,setCardpopup] = useState(false)
@@ -13,16 +17,20 @@ function PayMethod(){
 const cardbutton = () =>  {
         setBtpopup(true); 
         setCardpopup(true);
+        console.log(context)
         }
 const noButton = () => {
     setBtpopup(true); 
     setCardpopup(false);
 }
 
+
     return(
         
         <div  className="payform">  
             <h1 className="payTitle">Select a payment method</h1>
+           
+
             
             <hr/>            
             <label className="payOpp">Credit or Debit card</label>
