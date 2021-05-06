@@ -47,7 +47,7 @@ const Products = () => {
           onChange={(e) => handleSearchChange(e)}
         />
         <div className="category">
-          <button onClick={(e) => selectCategory(e)} value="all">
+          <button onClick={(e) => selectCategory(e)} value="all" autoFocus>
             All
           </button>
           <button onClick={(e) => selectCategory(e)} value="Electronics">
