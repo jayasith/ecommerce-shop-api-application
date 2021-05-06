@@ -7,7 +7,7 @@ const DeliveryForm = () => {
         
         <div class="p1">
             
-            <form>
+            <form className="deliveryForm">
             <h1 align="center">Fill out your address details</h1>
             <br/>
                 <label htmlFor ="country">Country or region : </label><br/>

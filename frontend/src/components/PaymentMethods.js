@@ -4,12 +4,12 @@ import  Cardimg from "../assets/credit_card_logo.png";
 import Ispimg from  "../assets/isp_logos.png";
 import Popup from "./Popup.js";
 import Paymentsummery from "./PaymentSummery.js"
-import CartContext from "./contexts/CartContext";
+
 
 
 function PayMethod(){
 
-    const context = useContext(CartContext);
+    
 
     const [Bttpopup,setBtpopup] = useState(false);
     const [CardPopup,setCardpopup] = useState(false)
@@ -17,7 +17,7 @@ function PayMethod(){
 const cardbutton = () =>  {
         setBtpopup(true); 
         setCardpopup(true);
-        console.log(context)
+        
         }
 const noButton = () => {
     setBtpopup(true); 
