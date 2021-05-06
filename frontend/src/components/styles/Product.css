@@ -76,6 +76,7 @@
 .product-page-container form input {
   width: 50%;
   margin: 0;
+  border: 1px solid black;
 }
 
 .category {
