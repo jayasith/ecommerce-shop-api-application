@@ -1,0 +1,156 @@
+
+h1{
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+
+.cdFormout{
+    padding: 15px 0px 15px 0px;
+}
+
+.numberInput{
+    width: 260px;
+    font-size: 20px;
+    padding-right: 32px;
+}
+
+.cardIcon{
+    position: absolute;
+    top: 130px;
+    left: 260px;
+    width: 35px;
+    height: 35px;
+}
+
+.dateInput{
+    width: 135px;
+    font-size: 20px;
+    padding-right: 32px;
+    
+}
+
+.dateIcon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 235px;
+    left: 144px;
+}
+
+.lockInput{
+    margin-left: 50px;
+    width: 40px;
+    padding-right: 25px;
+    
+}
+.cvcInput{
+    margin-left: 52.5px;
+    width: 85px;
+    font-size: 20px;
+    padding-right: 26px;
+    padding-left: 3px;
+    
+}
+
+label{
+    text-shadow: 0 0 black;
+    font-size: 24px;
+}
+
+input{
+    padding-right: 25px;
+    background-color: white;
+    border: 2px solid black;
+    color: black;
+    padding-right: 25px;
+    border-radius: 3px;
+}
+.cvc{
+    margin-left: 20px;
+}
+
+.lockIcon{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 236px;
+    left: 279px;
+
+}
+
+.payBt{
+    margin-left: 195px;
+    padding: 4px;
+    padding-left: 13px;
+    padding-right: 13px;
+    font-size: 19px;
+    border-radius: 5px;
+    color: white;
+    background-color: #24346a;
+    font-weight: bolder;
+    width: 100px;
+}
+
+.cdForm{
+    width: 400px;
+    padding: 20px;
+    background: white;
+}
+
+.mobileIcon{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 120px;
+    left: 274px;
+}
+
+.codeInput{
+    font-size: 20px;
+    width: 110px;
+    padding-right: 28px;
+}
+
+.sendBt{
+    font-size: 18px;
+    padding: 4px 10px 4px 10px;
+    margin-left: 193px;
+    font-weight: bold;
+    color: white;
+    background-color: #24346a;
+    border-radius: 5px;
+    width: 90px;
+}
+
+.lockIcon2{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 120px;
+    top: 118px;
+}
+
+.backBt{
+    margin-left: 150px;
+    padding: 4px 10px 4px 10px;
+    margin-top: 18px;
+    font-size: 19px;
+    border-radius: 5px;
+    color:#24346a;
+    background-color: white;
+    font-weight: bolder;
+    border: solid 2.5px;
+    width: 100px;
+}
+
+.submitBt{
+    margin-left: 5px;
+    padding: 4px 10px 4px 10px;
+    margin-top: 18px;
+    font-size: 19px;
+    border-radius: 5px;
+    color: white;
+    background-color: #24346a;
+    font-weight: bolder;
+    width: 100px;
+}
