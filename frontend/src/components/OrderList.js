@@ -1,5 +1,10 @@
+import { Link } from "react-router-dom";
+import Order from "./Order";
 import "./styles/Order.css";
 
+const popup =() =>{
+ <Link to="/order"></Link>
+}
 const OrderList = () => {
 
 
@@ -14,19 +19,19 @@ const OrderList = () => {
           <th> Seller</th>
       </thead>
       <tbody>
-          <tr> 
+          <tr className="row" onClick={popup}> 
             <td>Kaluthra</td>
             <td> 000001</td>
             <td>Pending</td>
             <td> Ranush</td>  
           </tr>
-          <tr> 
+          <tr className="row"> 
             <td>Kaluthra</td>
             <td> 000001</td>
             <td>Pending</td>
             <td> Ranush</td>  
           </tr>  
-          <tr> 
+          <tr className="row"> 
             <td>Kaluthra</td>
             <td> 000001</td>
             <td>Pending</td>
