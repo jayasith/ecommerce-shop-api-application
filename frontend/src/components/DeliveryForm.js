@@ -25,43 +25,43 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
         e.preventDefault();
         const newUser = { firstname, lastname, streetaddress, country, city, state, email, phonenumber};
         setIsAdding(true);
-        try {
-            const response = await fetch(
-              `http://localhost:9090/rest/${fetchEndpoint}/`,
-              {
-                method: "POST",
-                headers: {
-                  Accept: "application/json",
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify(newUser),
-              }
-            );
-            if (response.ok) {
-                setFirstname("");
-                setLastname("");
-                setStreetaddress("");
-                setCountry("");
-                setCity("");
-                setState("");
-                setEmail("");
-                setPhonenumber("");
-                setIsAdding(false);
-                toast.success("Your account has been created");
-                history.push("./additems");
-              } else {
-                toast.error("Something went wrong!");
-              }
-            } catch (error) {
-              toast.error("Something went wrong!");
-              setIsAdding(false);
-            }
+        // try {
+        //     const response = await fetch(
+        //       `http://localhost:9090/rest/${fetchEndpoint}/`,
+        //       {
+        //         method: "POST",
+        //         headers: {
+        //           Accept: "application/json",
+        //           "Content-Type": "application/json",
+        //         },
+        //         body: JSON.stringify(newUser),
+        //       }
+        //     );
+        //     if (response.ok) {
+        //         setFirstname("");
+        //         setLastname("");
+        //         setStreetaddress("");
+        //         setCountry("");
+        //         setCity("");
+        //         setState("");
+        //         setEmail("");
+        //         setPhonenumber("");
+        //         setIsAdding(false);
+        //         toast.success("Your account has been created");
+        //         history.push("./additems");
+        //       } else {
+        //         toast.error("Something went wrong!");
+        //       }
+        //     } catch (error) {
+        //       toast.error("Something went wrong!");
+        //       setIsAdding(false);
+        //     }
           };
     return (
         
         <div class="p1">
             
-            <form onSubmit={handleRegister}>
+            <form  class = "f1" onSubmit={handleRegister}>
             <h1 align="center">Fill out your address details</h1>
             <br/>
             {isDeliveryForm ?(
