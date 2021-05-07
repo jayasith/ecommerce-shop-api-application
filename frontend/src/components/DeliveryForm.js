@@ -3,6 +3,7 @@ import { useState , useContext} from "react";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import Payment from "./PaymentMethods"
 
 import "./styles/DeliveryForm.css";
 import "react-toastify/dist/ReactToastify.css";
@@ -23,48 +24,16 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
     const history = useHistory();
 
     document.title = title;
-    const context = useContext(CartContext);
-     console.log(context);
-    const handleAdress = (e) => {
-        
+     let delivery
+    const handleAdress = (e) => { 
+
         e.preventDefault();
-          context.address = { ...context.address,firstname, lastname, streetaddress, country, city, state, email, phonenumber};
-         console.log(context.address);
-       
-        // try {
-        //     const response = await fetch(
-        //       `http://localhost:9090/rest/${fetchEndpoint}/`,
-        //       {
-        //         method: "POST",
-        //         headers: {
-        //           Accept: "application/json",
-        //           "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify(newUser),
-        //       }
-        //     );
-        //     if (response.ok) {
-        //         setFirstname("");
-        //         setLastname("");
-        //         setStreetaddress("");
-        //         setCountry("");
-        //         setCity("");
-        //         setState("");
-        //         setEmail("");
-        //         setPhonenumber("");
-        //         setIsAdding(false);
-        //         toast.success("Your account has been created");
-        //         history.push("./additems");
-        //       } else {
-        //         toast.error("Something went wrong!");
-        //       }
-        //     } catch (error) {
-        //       toast.error("Something went wrong!");
-        //       setIsAdding(false);
-        //     }
+        delivery= {firstname, lastname, streetaddress, country, city, state, email, phonenumber}
+         setIsAdding(true);
+         console.log(delivery)
           };
     return (
-        
+        <div>
         <div class="p1">
             
             <form  class = "f1" onSubmit={(e)=>handleAdress(e)} >
@@ -147,13 +116,17 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
                         ""
                          )}
                 </table>
-                <Link to="/payment">
+                
                 <button type = "submit"class="btn"  value="SUBMIT">SUBMIT</button>
-            </Link>
+            
             </form>
             <ToastContainer position="top-center" />
+            
+        </div>
+            { isAdding ? <Payment  deliveryDetails={delivery}  />: <div> </div> }
         </div>
     )
 }
 
 export default DeliveryForm
+
