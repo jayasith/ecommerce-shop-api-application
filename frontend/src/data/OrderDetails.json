@@ -1,20 +1,45 @@
 {"Orders" : [
    
     {
-       "id" : 1 ,
+       "id" : "1" ,
        "location" : "Kaluthara",
        "zip" : "1200",
        "city" : "Nagoda",
        "address" : "14/7,Samagi uyana,Nagoda.",
-       "name" : "Surface Headphones 2",
-       "description":" Microsoft surface headphones with minimal and sleek design.",
        "quantity": "1",
-       "price": "Rs 5000",
        "date": " 2021-05-06",
        "status" : "Pending",
-       "img" :"https://image-cdn.beforward.jp/autoparts/original/202005/36083917/00000008058492_a01.jpg"
+       "sellerId" :"001",
+       "mgurl":"https://image-cdn.beforward.jp/autoparts/original/202005/36083917/00000008058492_a01.jpg",
+       "name": "Surface Headphones 2",
+       "price": "25000.0",
+       "description": "Microsoft surface headphones with minimal and sleek design.",
+       
 
+       "Products" :[{
+         "id": "1",
+       
+         "category": "Electronics"
         
+       },
+       {
+         "id": "2",
+         "imgurl":"https://res-1.cloudinary.com/grover/image/upload/e_trim/c_limit,f_auto,fl_png8.lossy,h_1920,q_auto,w_1920/v1588845584/uvi02qqeqh9flcssawfu.png",
+         "name": "Razer Blade 15",
+         "price": 225000.0,
+         "category": "Electronics",
+         "description": "Razer blade 15 with minimal and sleek design."
+       },
+       {
+         "id": "3",
+         "imgurl": "https://fossil.scene7.com/is/image/FossilPartners/FS5305_main?$sfcc_fos_hi-res$",
+         "name": "FOSSIL Men's Watch",
+         "price": 5000.0,
+         "category": "Fashion",
+         "description": "FOSSIL men's watch with brown leather strips."
+       }]
+
+      
     },
 
     {
@@ -23,14 +48,22 @@
         "zip" : "00",
         "city" : "Kalapaluwawa",
         "address" : "148",
-        "name" : "Razer Blade 15",
-        "description":" Razer blade 15 with minimal and sleek design.",
         "quantity": "1",
         "price": "Rs 6000",
         "date": " 2021-05-07",
         "status" : "Pending",
-        "img" : "https://res-1.cloudinary.com/grover/image/upload/e_trim/c_limit,f_auto,fl_png8.lossy,h_1920,q_auto,w_1920/v1588845584/uvi02qqeqh9flcssawfu.png"
- 
+        "sellerId" :"001",
+        "mgurl":"https://image-cdn.beforward.jp/autoparts/original/202005/36083917/00000008058492_a01.jpg",
+        "name": "Surface Headphones 2",
+        "description": "Microsoft surface headphones with minimal and sleek design.",
+         
+       "Products" :[{
+         "id": "1",
+        
+         "price": "25000.0",
+         "category": "Electronics"
+        
+       }]
          
      }
 ]
