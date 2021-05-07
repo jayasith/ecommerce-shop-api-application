@@ -11,6 +11,7 @@ function PayMethod(props){
 
     console.log(props);
     console.log(props.deliveryDetails);
+ 
 
     const [Bttpopup,setBtpopup] = useState(false);
     const [CardPopup,setCardpopup] = useState(false)
@@ -42,8 +43,7 @@ const noButton = () => {
             <br/>
             <button className="pnBt" onClick={noButton}>Add a phone number</button>
             <Paymentsummery />
-            <Popup trigger={Bttpopup} setTrigger={setBtpopup} setCard={CardPopup}/> 
-
+            <Popup delivery = {props.deliveryDetails} trigger={Bttpopup} setTrigger={setBtpopup} setCard={CardPopup} /> 
         </div>
     )
 }

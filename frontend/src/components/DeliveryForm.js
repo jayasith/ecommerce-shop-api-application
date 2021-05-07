@@ -24,13 +24,12 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
     const history = useHistory();
 
     document.title = title;
-     let delivery
+     
+     const[delivery,setDelivery] = useState({})
     const handleAdress = (e) => { 
-
         e.preventDefault();
-        delivery= {firstname, lastname, streetaddress, country, city, state, email, phonenumber}
+        setDelivery({firstname, lastname, streetaddress, country, city, state, email, phonenumber});
          setIsAdding(true);
-         console.log(delivery)
           };
     return (
         <div>
@@ -124,6 +123,7 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
             
         </div>
             { isAdding ? <Payment  deliveryDetails={delivery}  />: <div> </div> }
+            
         </div>
     )
 }
