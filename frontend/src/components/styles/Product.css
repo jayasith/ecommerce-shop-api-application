@@ -76,6 +76,7 @@
 .product-page-container form input {
   width: 50%;
   margin: 0;
+  border: 1px solid black;
 }
 
 .category {
@@ -87,13 +88,21 @@
 }
 
 .category button {
-  background: #24346a;
   outline: none;
   border: none;
   margin: 0 0.5rem;
   padding: 0.3rem 1rem;
   font-weight: 500;
   border-radius: 3px;
-  color: white;
+
   cursor: pointer;
+  border: #24346a 1px solid;
+  background: white;
+  color: #24346a;
+}
+
+.category button:hover,
+.category button:focus {
+  background: #24346a;
+  color: white;
 }

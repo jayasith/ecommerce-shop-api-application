@@ -1,12 +1,19 @@
 import React,{useContext} from 'react';
 import "./styles/Payment.css";
+import CartContext from "./contexts/CartContext";
 
 function Pricedetails(){
 
+    const context = useContext(CartContext);
+    console.log(context);
     return(
         <div>
             <form className='paymentform'>
             <h2 className ="os" >Order summery</h2>
+            {context.carts.map(id => {
+                return(<div><p>{id.product.name}</p>
+                <p>{id.product.price}</p></div>)
+                })}
                 <hr/>
                 <div  className ="fDiv">  
                 <label className="sub">Subtotal(SLR)</label>

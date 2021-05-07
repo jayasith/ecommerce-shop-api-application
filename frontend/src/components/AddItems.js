@@ -6,7 +6,7 @@ import "./styles/Form.css";
 function AddItems() {
     return (
         <div class="p1" align="center">
-            <form >
+            <form className="addItemForm">
             <table><h1>Add Item for sell</h1><br/>
                 <label htmlFor = "iname">Item Name</label><br/>  
                 <input type="text" name="iname" ></input><br/>
