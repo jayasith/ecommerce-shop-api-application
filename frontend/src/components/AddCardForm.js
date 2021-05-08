@@ -8,8 +8,8 @@ import CartContext from "./contexts/CartContext";
 function AddCardForm(props) {
 
     console.log(props.delivery)
-    const context = useContext(CartContext);
-    
+const context = useContext(CartContext);
+
 
 const {city,email,state,streetaddress} = props.delivery
 
@@ -20,7 +20,8 @@ const [cvc,setCvc]= useState("")
 
 const cardhandle = async(e) =>{
     e.preventDefault();
-    const card={ cardno, date, cvc}
+        const card={ cardno, date, cvc}
+        
 
     try {
       const cardResponse = await fetch(
@@ -38,7 +39,7 @@ const cardhandle = async(e) =>{
         setCardno("");
         setDate("");
         setCvc("");
-        toast.success("Your account has been created");
+        toast.success("Your payment successful");
         const orderResponse = await fetch(
         `http://localhost:9090/rest/card/`,
         {

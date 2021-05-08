@@ -8,6 +8,8 @@ import OrderList from "./components/OrderList";
 import Order from "./components/Order";
 import DeliveryForm from "./components/DeliveryForm";
 import AddItems from "./components/AddItems";
+import Payment from "./components/PaymentMethods";
+import ItemEditDelete from "./components/ItemEditDelete";
 
 function App() {
   return (
@@ -33,17 +35,18 @@ function App() {
         <Route path="/products">
           <Products />
         </Route>
-        <Route path="/order">
-          <Order />
-        </Route>
         <Route path="/orders">
           <OrderList />
         </Route>
-        <Route path="/delivery">
-          <DeliveryForm isDeliveryForm />
-        </Route>
         <Route path="/additems">
-          <AddItems />
+          <AddItems isAddItem />
+        </Route>
+        <Route path="/payment">
+          <DeliveryForm isDeliveryForm />
+          <Payment />
+        </Route>
+        <Route path="/itemeditdelete">
+          <ItemEditDelete />
         </Route>
       </Switch>
     </div>
