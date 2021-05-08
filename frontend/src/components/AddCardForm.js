@@ -9,6 +9,7 @@ function AddCardForm(props) {
 
     console.log(props.delivery)
     const context = useContext(CartContext);
+    
 
 const {city,email,state,streetaddress} = props.delivery
 

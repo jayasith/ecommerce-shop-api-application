@@ -42,7 +42,7 @@ public class Controller {
 
         if(seller!=null) {
             if (seller.getPassword().equals(s.getPassword())) {
-                return "correct";
+                return seller.getId();
             } else {
                 return "incorrect";
             }
@@ -56,7 +56,7 @@ public class Controller {
 
         if(buyer!=null){
             if(buyer.getPassword().equals(b.getPassword())){
-                return "correct";
+                return buyer.getId();
             }else{
                 return "incorrect";
             }
