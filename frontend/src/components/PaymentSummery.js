@@ -4,6 +4,8 @@ import CartContext from "./contexts/CartContext";
 
 function Pricedetails(){
 
+    let item = 0;
+    let subtotal = 0;
     const context = useContext(CartContext);
     console.log(context);
     return(
@@ -11,24 +13,28 @@ function Pricedetails(){
             <form className='paymentform'>
             <h2 className ="os" >Order summery</h2>
             {context.carts.map(id => {
-                return(<div><p>{id.product.name}</p>
-                <p>{id.product.price}</p></div>)
+                return(<div>
+                    <img className="productImg" src={id.product.imgurl} alt="img"/> 
+                    <label className="peoductName">{id.product.name} X {id.quantity}</label>
+                <label className="peoductprice" >{id.product.price}</label>
+                {item+=id.quantity }
+                {subtotal+=(id.product.price*id.quantity)} </div>)             
                 })}
                 <hr/>
                 <div  className ="fDiv">  
                 <label className="sub">Subtotal(SLR)</label>
-                <label className="subPrice">132</label>
+                <label className="subPrice">{subtotal}</label>
                 <br/>                
                 <label>Shipping(SLR)</label>
-                <label className="subPrice">10</label>
+                <label className="subPrice">1000</label>
                 <br/>
                 <label>Items</label>
-                <label className="subPrice">1</label>
+                <label className="subPrice">{item}</label>
                 </div>
                 <hr/>
                 <br/>
                 <label className="total">TOTAL(SLR)</label>
-                <label className="totPrice">22</label>
+                <label className="totPrice">{subtotal + 1000}</label>
             </form>
         </div>
     )
