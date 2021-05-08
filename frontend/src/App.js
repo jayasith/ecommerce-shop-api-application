@@ -28,19 +28,19 @@ function App() {
           />
         </Route>
         <Route path="/login">
-          <Form fetchEndpoint="login" title="Login" isRegisterForm={false} />
+          <Form fetchEndpoint="buyerlog" title="Login" isRegisterForm={false} />
         </Route>
         <Route path="/products">
           <Products />
         </Route>
         <Route path="/order">
-          <Order/>
+          <Order />
         </Route>
         <Route path="/orders">
-          <OrderList/>
+          <OrderList />
         </Route>
         <Route path="/delivery">
-         <DeliveryForm isDeliveryForm/>
+          <DeliveryForm isDeliveryForm />
         </Route>
         <Route path="/additems">
           <AddItems />
