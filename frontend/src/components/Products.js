@@ -1,13 +1,12 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
-import productDetails from "../data/productDetails";
 import ProductCard from "./ProductCard";
 
 import "./styles/Product.css";
 import CartContext from "./contexts/CartContext";
 
 const Products = () => {
-  let [products, setProducts] = useState(productDetails);
+  let [products, setProducts] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
   const context = useContext(CartContext);
@@ -15,6 +14,18 @@ const Products = () => {
   const handleAddProduct = (product) => {
     context.addProductToCart(product);
   };
+
+  const getProducts = async () => {
+    const response = await fetch("http://localhost:9090/rest/products");
+    const data = await response.json();
+    console.log(response);
+    console.log(data);
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   document.title = "Products";
 
@@ -24,10 +35,10 @@ const Products = () => {
 
   const selectCategory = (e) => {
     e.preventDefault();
+    setProducts(products);
     if (e.target.value === "all") {
-      setProducts(productDetails);
+      setProducts(products);
     } else {
-      products = productDetails;
       setProducts(
         products.filter((product) => {
           return product.category === e.target.value;

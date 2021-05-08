@@ -1,4 +1,4 @@
-import React, { useReducer ,useState } from "react";
+import React, { useReducer, useState } from "react";
 
 import products from "../../data/productDetails";
 import CartContext from "./CartContext";
@@ -24,9 +24,7 @@ const CartState = (props) => {
       type: "CLEAR_ALL_FROM_CART",
     });
   };
-  const [address,setUpdate] = useState([
-    {name:"name"}
-  ])
+  const [address, setUpdate] = useState([{ name: "name" }]);
 
   return (
     <CartContext.Provider
@@ -34,7 +32,7 @@ const CartState = (props) => {
         products: products,
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,
-        delivary :[address,setUpdate],
+        delivary: [address, setUpdate],
         clearCart: clearCart,
         carts: state.carts,
       }}
