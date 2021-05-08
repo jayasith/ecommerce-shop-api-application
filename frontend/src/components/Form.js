@@ -84,8 +84,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
         setPassword("");
         setEmail("");
         setIsAdding(false);
-        toast.success("Login success");
-        !isSellerLogin ? history.push("/products") : history.push("/buyer");
+        !isSellerLogin ? history.push("/products") : history.push("/additems");
       }
     } catch (error) {
       toast.error("Something went wrong!");
