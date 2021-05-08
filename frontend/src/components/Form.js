@@ -73,21 +73,19 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
       );
 
       const authState = await response.text();
+      console.log(response);
       console.log(authState);
 
-      console.log(response);
-      console.log("login");
-
-      if (authState === "correct") {
+      if (authState === "incorrect" || authState === "username doesn't exist") {
+        toast.error("Your username or password is invalid");
+        setIsAdding(false);
+      } else {
         setUsername("");
         setPassword("");
         setEmail("");
         setIsAdding(false);
         toast.success("Login success");
         !isSellerLogin ? history.push("/products") : history.push("/buyer");
-      } else {
-        toast.error("Your username or password is invalid");
-        setIsAdding(false);
       }
     } catch (error) {
       toast.error("Something went wrong!");
