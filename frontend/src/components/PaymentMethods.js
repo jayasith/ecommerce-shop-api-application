@@ -7,9 +7,11 @@ import Paymentsummery from "./PaymentSummery.js"
 
 
 
-function PayMethod(){
+function PayMethod(props){
 
-    
+    console.log(props);
+    console.log(props.deliveryDetails);
+ 
 
     const [Bttpopup,setBtpopup] = useState(false);
     const [CardPopup,setCardpopup] = useState(false)
@@ -29,9 +31,6 @@ const noButton = () => {
         
         <div  className="payform">  
             <h1 className="payTitle">Select a payment method</h1>
-           
-
-            
             <hr/>            
             <label className="payOpp">Credit or Debit card</label>
             <img className="cardImg" src={Cardimg}  alt="img"/>
@@ -44,8 +43,7 @@ const noButton = () => {
             <br/>
             <button className="pnBt" onClick={noButton}>Add a phone number</button>
             <Paymentsummery />
-            <Popup trigger={Bttpopup} setTrigger={setBtpopup} setCard={CardPopup}/> 
-
+            <Popup delivery = {props.deliveryDetails} trigger={Bttpopup} setTrigger={setBtpopup} setCard={CardPopup} /> 
         </div>
     )
 }

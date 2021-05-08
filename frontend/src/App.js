@@ -8,7 +8,6 @@ import OrderList from "./components/OrderList";
 import Order from "./components/Order";
 import DeliveryForm from "./components/DeliveryForm";
 import AddItems from "./components/AddItems";
-import Payment from "./components/PaymentMethods"
 
 function App() {
   return (
@@ -29,26 +28,22 @@ function App() {
           />
         </Route>
         <Route path="/login">
-          <Form fetchEndpoint="login" title="Login" isRegisterForm={false} />
+          <Form fetchEndpoint="buyerlog" title="Login" isRegisterForm={false} />
         </Route>
         <Route path="/products">
           <Products />
         </Route>
         <Route path="/order">
-          <Order/>
+          <Order />
         </Route>
         <Route path="/orders">
-          <OrderList/>
+          <OrderList />
         </Route>
         <Route path="/delivery">
-         
+          <DeliveryForm isDeliveryForm />
         </Route>
         <Route path="/additems">
           <AddItems />
-        </Route>
-        <Route path="/payment">
-           <DeliveryForm isDeliveryForm/>
-          <Payment/>
         </Route>
       </Switch>
     </div>

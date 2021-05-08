@@ -42,7 +42,7 @@ public class Controller {
 
         if(seller!=null) {
             if (seller.getPassword().equals(s.getPassword())) {
-                return "correct";
+                return seller.getId();
             } else {
                 return "incorrect";
             }
@@ -53,10 +53,9 @@ public class Controller {
     @PostMapping("/buyerlog")
     public String Buyerlogin(@RequestBody Buyer b){
         Buyer buyer = buyerRepo.findByUsername(b.getUsername());
-
         if(buyer!=null){
             if(buyer.getPassword().equals(b.getPassword())){
-                return "correct";
+                return buyer.getId();
             }else{
                 return "incorrect";
             }
