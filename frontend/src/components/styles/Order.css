@@ -5,7 +5,7 @@
   font-family: "Quicksand";
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-
+  
   -webkit-animation-name: fadeIn; /* Fade in the background */
   -webkit-animation-duration: 0.4s;
   animation-name: fadeIn;
@@ -18,8 +18,7 @@
 
 .item-list {
   background-color: #f0f0f2;
-  padding: 100px 100px;
-  justify-content: space-between;
+  padding: 100px 90px;
   font-family: "Quicksand";
   width: 600px;
 }
@@ -68,7 +67,8 @@
   width: 250px;
   height: 50px;
   padding: 10px auto;
-
+  text-align: center;
+  font-family: "Quicksand";
   font-size: 15px;
 }
 .table th {
@@ -77,9 +77,11 @@
   height: 50px;
   color: white;
   font-size: 20px;
+  text-align: center;
+  font-family: "Quicksand";
 }
 
-.row {
+.rw {
   background-color: #d8e0df;
   border-bottom: 1px solid #ffffff;
   border-top: 1px solid #ffffff;
@@ -122,7 +124,7 @@
   background-color: #284fcf;
 }
 
-.row:hover {
+.rw:hover {
   font-weight: bolder;
   background-color: whitesmoke;
   color: #999b9b;
@@ -132,13 +134,5 @@
   width: 1000px;
   height: 500px;
 }
-.modal {
-  width: 100%;
-  padding: 500px 1000px;
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 1;
-  -webkit-animation-name: fadeIn; /* Fade in the background */
 
-  animation-name: fadeIn;
-}
+
