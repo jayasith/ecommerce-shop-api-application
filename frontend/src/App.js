@@ -38,10 +38,6 @@ function App() {
         <Route path="/orders">
           <OrderList />
         </Route>
-        <Route path="/delivery">
-          <DeliveryForm isDeliveryForm />
-        </Route>
-        <Route path="/delivery"></Route>
         <Route path="/additems">
           <AddItems isAddItem />
         </Route>
@@ -51,7 +47,6 @@ function App() {
         </Route>
         <Route path="/itemeditdelete">
           <ItemEditDelete />
-          <Payment />
         </Route>
       </Switch>
     </div>

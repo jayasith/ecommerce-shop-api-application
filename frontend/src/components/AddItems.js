@@ -33,7 +33,7 @@ const AddItems = ({ fetchEndpoint, title, isAddItems }) => {
         },
         body: JSON.stringify(additem),
       });
-      console.log(response);
+
       if (response.ok) {
         setItem("");
         setCategory("");
@@ -42,7 +42,9 @@ const AddItems = ({ fetchEndpoint, title, isAddItems }) => {
         setItemprice("");
         setIsAdding(false);
         toast.success("Product has been added");
-        history.push("./ItemEditDelete");
+        setTimeout(() => {
+          history.push("./ItemEditDelete");
+        }, 2000);
       } else {
         toast.error("Something went wrong!");
       }
@@ -60,7 +62,7 @@ const AddItems = ({ fetchEndpoint, title, isAddItems }) => {
           <br />
           {
             <div>
-              n<label htmlFor="name">Item Name</label>
+              <label htmlFor="name">Item Name</label>
               <br />
               <input
                 type="text"
