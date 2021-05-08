@@ -8,7 +8,8 @@ import OrderList from "./components/OrderList";
 import Order from "./components/Order";
 import DeliveryForm from "./components/DeliveryForm";
 import AddItems from "./components/AddItems";
-import Payment from "./components/PaymentMethods"
+import Payment from "./components/PaymentMethods";
+import ItemEditDelete from "./components/ItemEditDelete";
 
 function App() {
   return (
@@ -35,20 +36,22 @@ function App() {
           <Products />
         </Route>
         <Route path="/order">
-          <Order/>
+          <Order />s
         </Route>
         <Route path="/orders">
-          <OrderList/>
+          <OrderList />
         </Route>
-        <Route path="/delivery">
-         
-        </Route>
+        <Route path="/delivery"></Route>
         <Route path="/additems">
-          <AddItems />
+          <AddItems isAddItem />
         </Route>
         <Route path="/payment">
-           <DeliveryForm isDeliveryForm/>
-          <Payment/>
+          <DeliveryForm isDeliveryForm />
+          <Payment />
+        </Route>
+        <Route path="/itemeditdelete">
+          <ItemEditDelete />
+          <Payment />
         </Route>
       </Switch>
     </div>

@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 import "./styles/Form.css";
 import CartContext from "./contexts/CartContext";
-const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
+const DeliveryForm = ({ title,isDeliveryForm}) => {
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
     const [streetaddress, setStreetaddress] = useState("");
@@ -31,37 +31,7 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
           context.address = { ...context.address,firstname, lastname, streetaddress, country, city, state, email, phonenumber};
          console.log(context.address);
        
-        // try {
-        //     const response = await fetch(
-        //       `http://localhost:9090/rest/${fetchEndpoint}/`,
-        //       {
-        //         method: "POST",
-        //         headers: {
-        //           Accept: "application/json",
-        //           "Content-Type": "application/json",
-        //         },
-        //         body: JSON.stringify(newUser),
-        //       }
-        //     );
-        //     if (response.ok) {
-        //         setFirstname("");
-        //         setLastname("");
-        //         setStreetaddress("");
-        //         setCountry("");
-        //         setCity("");
-        //         setState("");
-        //         setEmail("");
-        //         setPhonenumber("");
-        //         setIsAdding(false);
-        //         toast.success("Your account has been created");
-        //         history.push("./additems");
-        //       } else {
-        //         toast.error("Something went wrong!");
-        //       }
-        //     } catch (error) {
-        //       toast.error("Something went wrong!");
-        //       setIsAdding(false);
-        //     }
+  
           };
     return (
         
@@ -86,7 +56,13 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
                         {isDeliveryForm ?(
                         <div>
                         <label htmlFor ="firstname">First Name : </label>
-                        <input type="text" id="firstname" name="firstname" required class="w1" value={firstname} onChange={(e) => setFirstname(e.target.value)}></input>
+                        <input type="text"
+                         id="firstname" 
+                         name="firstname" 
+                         required 
+                         class="w1" 
+                         value={firstname} 
+                         onChange={(e) => setFirstname(e.target.value)}></input>
                         
                         </div>
                         ) : (
@@ -97,7 +73,12 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
                         {isDeliveryForm ?(
                         <div>
                         <label htmlFor ="lastname">Last Name : </label>
-                        <input type="text" id="lastname" name="lastname" required value={lastname} onChange={(e) => setLastname(e.target.value)}></input>
+                        <input type="text" 
+                        id="lastname" 
+                        name="lastname" 
+                        required 
+                        value={lastname} 
+                        onChange={(e) => setLastname(e.target.value)}></input>
                             </div>
                         ) : (
                         ""
@@ -107,7 +88,12 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
                 {isDeliveryForm ?(
                 <div>
                  <label htmlFor ="streetaddress">Street Address : </label><br/>
-                 <input type="text" id="streetaddress" name="streetaddress" required value={streetaddress} onChange={(e) => setStreetaddress(e.target.value)}></input>
+                 <input type="text" 
+                 id="streetaddress" 
+                 name="streetaddress" 
+                 required 
+                 value={streetaddress} 
+                 onChange={(e) => setStreetaddress(e.target.value)}></input>
                  </div>
                  ) : (
                 ""
@@ -116,7 +102,12 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
                 {isDeliveryForm ?(
                 <div>
                 <label htmlFor ="city">City : </label><br/>
-                <input type="text" id="city" name="city" required value={city} onChange={(e) => setCity(e.target.value)}></input>
+                <input type="text"
+                id="city" 
+                name="city" 
+                required 
+                value={city} 
+                onChange={(e) => setCity(e.target.value)}></input>
                 </div>
                         ) : (
                         ""
@@ -124,7 +115,12 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
                 {isDeliveryForm ?(
                 <div>
                 <label htmlFor ="state">State : </label><br/>
-                <input type="text" id="state" name="state" required value={state} onChange={(e) => setState(e.target.value)}></input>
+                <input type="text" 
+                id="state" 
+                name="state" 
+                required 
+                value={state} 
+                onChange={(e) => setState(e.target.value)}></input>
                 </div>
                         ) : (
                         ""
@@ -132,7 +128,12 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
                 {isDeliveryForm ?(
                 <div>
                <label htmlFor ="email">Email : </label><br/>
-                <input type="text" id="email" name="email" required value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                <input type="text" 
+                id="email" 
+                name="email" 
+                required 
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)}></input>
                 </div>
                         ) : (
                         ""
@@ -141,7 +142,12 @@ const DeliveryForm = ({fetchEndpoint, title,isDeliveryForm}) => {
                {isDeliveryForm ?(
                         <div>             
                 <label htmlFor ="phonenumber">Phone number(required) : </label><br/>
-                <input type="text" id="phonenumber" name="phonenumber" required value={phonenumber} onChange={(e) => setPhonenumber(e.target.value)}></input>
+                <input type="text" 
+                id="phonenumber" 
+                name="phonenumber" 
+                required 
+                value={phonenumber} 
+                onChange={(e) => setPhonenumber(e.target.value)}></input>
                 </div>
                         ) : (
                         ""

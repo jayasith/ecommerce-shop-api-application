@@ -16,8 +16,8 @@ public class Product {
     private String sellerId;
     private String imgurl;
     private String name;
-    private String quantity;
-    private String price;
+
+    private String itemprice;
     private String category;
     private String description;
 }
