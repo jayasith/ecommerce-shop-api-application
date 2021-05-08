@@ -29,8 +29,20 @@ const DeliveryForm = ({ title, isDeliveryForm }) => {
   const handleAdress = (e) => {
     e.preventDefault();
 
-    context.address = {
-      ...context.address,
+    // context.address = {
+    //   ...context.address,
+    //   firstname,
+    //   lastname,
+    //   streetaddress,
+    //   country,
+    //   city,
+    //   state,
+    //   email,
+    //   phonenumber,
+    // };
+    // console.log(context.address);
+
+    setDelivery({
       firstname,
       lastname,
       streetaddress,
@@ -39,12 +51,8 @@ const DeliveryForm = ({ title, isDeliveryForm }) => {
       state,
       email,
       phonenumber,
-    };
-    console.log(context.address);
-
-    //         setDelivery({firstname, lastname, streetaddress, country, city, state, email, phonenumber});
-    //          setIsAdding(true);
-    // >>>>>> 2e705078a87a1d3c6d60a749de686594fad64a54
+    });
+    setIsAdding(true);
   };
   return (
     <div>
