@@ -4,10 +4,8 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
-// <form>
-//     <table>
-//         <th>
+const ItemEditDelete = () => {
+  return <div></div>;
+};
 
-//         </th>
-//     </table>
-// </form>
+export default ItemEditDelete;

@@ -1,10 +1,9 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 
 export default createContext({
   products: [],
   carts: [],
-  address:{},
-  additem:{},
+  address: {},
   addProductToCart: (product) => {},
   removeProductFromCart: (productID) => {},
   clearCart: () => {},

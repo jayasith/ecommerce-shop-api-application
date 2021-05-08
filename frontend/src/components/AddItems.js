@@ -60,7 +60,7 @@ const AddItems = ({ fetchEndpoint, title, isAddItems }) => {
           <br />
           {
             <div>
-              <label htmlFor="name">Item Name</label>
+              n<label htmlFor="name">Item Name</label>
               <br />
               <input
                 type="text"

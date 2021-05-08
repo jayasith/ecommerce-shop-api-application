@@ -10,6 +10,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const [isSellerLogin, setIsSellerLogin] = useState(false);
   const [isAdding, setIsAdding] = useState(false);
 
   const history = useHistory();
@@ -50,10 +51,59 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
     }
   };
 
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    const authUser = { username, password };
+    setIsAdding(true);
+
+    if (isSellerLogin) {
+      fetchEndpoint = "sellerlog";
+    }
+
+    try {
+      const response = await fetch(
+        `http://localhost:9090/rest/${fetchEndpoint}/`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(authUser),
+        }
+      );
+
+      const authState = await response.text();
+      console.log(response);
+      console.log(authState);
+
+      if (authState === "incorrect" || authState === "username doesn't exist") {
+        toast.error("Your username or password is invalid");
+        setIsAdding(false);
+      } else {
+        setUsername("");
+        setPassword("");
+        setEmail("");
+        setIsAdding(false);
+        toast.success("Login success");
+        !isSellerLogin ? history.push("/products") : history.push("/buyer");
+      }
+    } catch (error) {
+      toast.error("Something went wrong!");
+      setIsAdding(false);
+    }
+  };
+
+  const handleLoginSelection = () => {
+    isSellerLogin ? setIsSellerLogin(false) : setIsSellerLogin(true);
+  };
+
   return (
     <div className="form-container">
       <h2>{title}</h2>
-      <form className="register-form" onSubmit={handleRegister}>
+      <form
+        className="register-form"
+        onSubmit={isRegisterForm ? handleRegister : handleLogin}
+      >
         <div className="username">
           <label htmlFor="username">Username</label>
           <input
@@ -86,7 +136,12 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
               paddingBottom: "2rem",
             }}
           >
-            <input type="checkbox" name="seller" id="seller" />
+            <input
+              type="checkbox"
+              name="seller"
+              id="seller"
+              onChange={handleLoginSelection}
+            />
             <label htmlFor="seller">Login as a seller</label>
           </div>
         ) : (
