@@ -20,7 +20,7 @@ function AddCardForm(props) {
     const card = { cardno, date, cvc };
 
     try {
-      const cardResponse = await fetch(`http://localhost:9090/rest/card/`, {
+      const cardResponse = await fetch(`http://localhost:9090/card/`, {
         method: "POST",
         headers: {
           Accept: "application/json",

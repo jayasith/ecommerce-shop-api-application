@@ -32,8 +32,6 @@ const State = (props) => {
     dispatch({ type: "SET_USER_AUTH", payload: userID });
   };
 
-  const [address, setUpdate] = useState([{ name: "name" }]);
-
   return (
     <Context.Provider
       value={{
@@ -45,7 +43,6 @@ const State = (props) => {
         clearCart: clearCart,
         addProducts: addProducts,
         setUserAuth: setUserAuth,
-        delivary: [address, setUpdate],
       }}
     >
       {props.children}
