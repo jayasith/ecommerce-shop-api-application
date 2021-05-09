@@ -6,7 +6,9 @@ import "./styles/PaymentForms.css";
 import Context from "./contexts/Context";
 
 function AddNoForm(props) {
-  const context = useContext(Context);
+   const context = useContext(Context);
+  const products = [...context.products]
+  
 
   const { city, email, state, streetaddress } = props.delivery;
 
@@ -18,24 +20,25 @@ function AddNoForm(props) {
 
   const codeHandle = async (e) => {
     const mobile = { mobileno, code };
-    const order = { id, email, state, streetaddress };
+    const order = { id, email,city, state,products, streetaddress };
+    console.log(order);
+        console.log(mobile);
 
     try {
-      const mobileRespons = await fetch(`http//localhost:9090/rest/mobile`, {
+      const mobileRespons = await fetch(`http://localhost:9090/rest/order/`, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(mobile),
+        body: JSON.stringify(order),
         
       });
-      console.log(mobile);
       if (mobileRespons.ok) {
         setCode("");
         setMobileno("");
         toast.success("Your payment successful");
-        const orderResponse = await fetch(`http//localhost:9090/rest/order`, {
+        const orderResponse = await fetch(`http//localhost:9090/rest/`, {
           method: "POST",
           headers: {
             Accept: "application/json",

@@ -16,9 +16,9 @@ function Pricedetails(){
                 return(<div>
                     <img className="productImg" src={id.product.imgurl} alt="img"/> 
                     <label className="peoductName">{id.product.name} X {id.quantity}</label>
-                <label className="subPrice" >{id.product.price}</label>
+                <label className="subPrice" >{id.product.itemprice}</label>
                 <div className="cal">{item+=id.quantity }
-                {subtotal+=(id.product.price*id.quantity)}</div> </div>)             
+                {subtotal+=(id.product.itemprice*id.quantity)}</div> </div>)             
                 })}
                 <hr/>
                 <div  className ="fDiv">  
@@ -35,10 +35,6 @@ function Pricedetails(){
                 <br/>
                 <label className="total">TOTAL(SLR)</label>
                 <label className="totPrice">{subtotal + 1000}</label>
-        <hr />
-        <br />
-        <label className="total">TOTAL(SLR)</label>
-        <label className="totPrice">22</label>
       </form>
     </div>
   );

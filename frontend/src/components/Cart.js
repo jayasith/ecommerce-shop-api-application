@@ -53,7 +53,7 @@ const Cart = ({
         ""
       )}
       {carts.length !== 0 ? (
-        <Link to="/delivery">
+        <Link to="/payment">
           <button
             className="important clear-all"
             onClick={() => setIsToggle(false)}

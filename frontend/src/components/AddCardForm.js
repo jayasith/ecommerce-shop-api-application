@@ -6,21 +6,28 @@ import "react-toastify/dist/ReactToastify.css";
 import Context from "./contexts/Context";
 
 function AddCardForm(props) {
-  console.log(props.delivery);
+  
   const context = useContext(Context);
+  const products = [...context.products]
+  console.log(props.delivery);
+ console.log(products);
 
 
+  const date = new Date().getTime();
+  console.log(date);
   const { city, state, streetaddress } = props.delivery;
   const id = context.userAuth;
 
   const [cardno, setCardno] = useState("");
-  const [date, setDate] = useState("");
+  const [exdate, setExdate] = useState("");
   const [cvc, setCvc] = useState("");
 
   const cardhandle = async (e) => {
     e.preventDefault();
-    const card = { cardno, date, cvc };
-    const order = { id, city, state, streetaddress}
+    const card = { cardno, exdate, cvc };
+    const order = { id, date, city, products, state, streetaddress}
+    console.log(order);
+        console.log(card);
     try {
       const cardResponse = await fetch(`http://localhost:9090/rest/order/`, {
         method: "POST",
@@ -30,9 +37,11 @@ function AddCardForm(props) {
         },
         body: JSON.stringify(order),
       });
+      
       if (cardResponse.ok) {
+        
         setCardno("");
-        setDate("");
+        setExdate("");
         setCvc("");
         toast.success("Your payment successful");
         const orderResponse = await fetch(`http://localhost:9090/rest/`, {
@@ -43,7 +52,7 @@ function AddCardForm(props) {
           },
           body: JSON.stringify(),
         });
-        console.log(order);
+        
       } else {
         toast.error("Something went wrong!");
       }
@@ -75,7 +84,7 @@ function AddCardForm(props) {
           <input
             type="text"
             placeholder="(MM/YY)"
-            onChange={(e) => setDate(e.target.value)}
+            onChange={(e) => setExdate(e.target.value)}
             className="dateInput"
             required
           />
