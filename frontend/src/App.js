@@ -43,7 +43,6 @@ function App() {
         </Route>
         <Route path="/payment">
           <DeliveryForm isDeliveryForm />
-          <Payment />
         </Route>
         <Route path="/itemeditdelete">
           <ItemEditDelete />

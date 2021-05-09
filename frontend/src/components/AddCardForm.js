@@ -16,7 +16,7 @@ function AddCardForm(props) {
   const date = new Date().getTime();
   console.log(date);
   const { city, state, streetaddress } = props.delivery;
-  const id = context.userAuth;
+  const buyerid = context.userAuth;
 
   const [cardno, setCardno] = useState("");
   const [exdate, setExdate] = useState("");
@@ -25,7 +25,7 @@ function AddCardForm(props) {
   const cardhandle = async (e) => {
     e.preventDefault();
     const card = { cardno, exdate, cvc };
-    const order = { id, date, city, products, state, streetaddress}
+    const order = { buyerid, date, city, products, state, streetaddress}
     console.log(order);
         console.log(card);
     try {

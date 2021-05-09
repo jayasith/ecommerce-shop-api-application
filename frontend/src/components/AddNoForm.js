@@ -16,13 +16,13 @@ function AddNoForm(props) {
   const [mobileno, setMobileno] = useState("");
   const [code, setCode] = useState("");
 
-  const id = context.userAuth;
+  const buyerid = context.userAuth;
 
   const codeHandle = async (e) => {
     const mobile = { mobileno, code };
-    const order = { id, email,city, state,products, streetaddress };
+    const order = { buyerid, email,city, state,products, streetaddress };
     console.log(order);
-        console.log(mobile);
+    console.log(mobile);
 
     try {
       const mobileRespons = await fetch(`http://localhost:9090/rest/order/`, {

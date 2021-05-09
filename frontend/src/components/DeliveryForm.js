@@ -426,7 +426,7 @@ const DeliveryForm = ({ title, isDeliveryForm }) => {
         </form>
         <ToastContainer position="top-center" />
       </div>
-      {isAdding ? <Payment deliveryDetails={delivery} /> : <div> </div>}
+       <Payment deliveryDetails={delivery} /> 
     </div>
   );
 };
