@@ -18,12 +18,20 @@ const AddItems = ({ fetchEndpoint, title, isAddItems }) => {
 
   const history = useHistory();
   const context = useContext(Context);
-  console.log(context);
+  console.log(context.userAuth);
   document.title = title;
 
   const handleItem = async (e) => {
     e.preventDefault();
-    const additem = { name, category, description, imgurl, itemprice };
+    const sellerId = context.userAuth;
+    const additem = {
+      sellerId,
+      name,
+      category,
+      description,
+      imgurl,
+      itemprice,
+    };
     setIsAdding(true);
     console.log(additem);
     try {
