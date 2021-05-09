@@ -72,22 +72,22 @@ public class Controller {
     public String addProduct(@RequestBody Product product){
         productRepo.save(product);
 
-        return "id :"+product.getId()+" added";
+        return product.getId();
     }
 
-    @GetMapping("/sellerproducts/{id}")
+    @GetMapping("/products/{id}")
     public List<Product> getSellerProduct(@PathVariable String id){
         return productRepo.findBySellerId(id);
     }
 
-    @PostMapping("/sellerproducts")
+    @PutMapping("/products/{id}")
     public String updateProduct(@RequestBody Product product){
         productRepo.insert(product);
 
         return  "product update";
     }
 
-    @DeleteMapping("/sellerproducts/{id}")
+    @DeleteMapping("/products/{id}")
     public String deleteProduct(@PathVariable String id){
         productRepo.deleteById(id);
         return "product deleted";
@@ -100,19 +100,9 @@ public class Controller {
         return "order added";
     }
 
-    @GetMapping("/buyerorders/{id}")
+    @GetMapping("/order/{id}")
     public List<Order> getBuyerOrders(@PathVariable String id){
-        return orderRepo.findBySellerid(id);
+        return orderRepo.findByBuyerid(id);
     }
 
-    @GetMapping("/selleroders/{id}")
-    public List<Order> getSellerOrders(@PathVariable String id){
-        return orderRepo.findBySellerid(id);
-    }
-
-    @PostMapping("/sellerorder")
-    public String updateSellerOrderStatus(@RequestBody Order order){
-        orderRepo.insert(order);
-        return "update order status";
-    }
 }

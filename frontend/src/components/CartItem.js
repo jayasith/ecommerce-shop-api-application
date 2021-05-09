@@ -14,7 +14,7 @@ const CartItem = ({ cart, removeProductFromCart }) => {
             {cart.quantity}
           </span>{" "}
           x {cart.product.name} ={" LKR "}
-          {cart.quantity * parseInt(cart.product.itemprice)}
+          {cart.quantity * cart.product.itemprice}
         </p>
         <button
           className="important buy-now"
