@@ -2,6 +2,7 @@ import React from "react";
 import { FaTrash } from "react-icons/fa";
 
 const CartItem = ({ cart, removeProductFromCart }) => {
+  console.log(cart);
   return (
     <div className="cart-item-container">
       <div className="img-container">
@@ -13,7 +14,7 @@ const CartItem = ({ cart, removeProductFromCart }) => {
             {cart.quantity}
           </span>{" "}
           x {cart.product.name} ={" LKR "}
-          {cart.quantity * cart.product.price}
+          {cart.quantity * parseInt(cart.product.itemprice)}
         </p>
         <button
           className="important buy-now"

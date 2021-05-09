@@ -1,20 +1,30 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { ToastContainer } from "react-toastify";
-import productDetails from "../data/productDetails";
 import ProductCard from "./ProductCard";
 
 import "./styles/Product.css";
-import CartContext from "./contexts/CartContext";
+import Context from "./contexts/Context";
 
 const Products = () => {
-  let [products, setProducts] = useState(productDetails);
+  let [products, setProducts] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
-  const context = useContext(CartContext);
-
+  const context = useContext(Context);
+  console.log(context);
   const handleAddProduct = (product) => {
     context.addProductToCart(product);
   };
+
+  const getProducts = async () => {
+    const response = await fetch("http://localhost:9090/rest/products");
+    const data = await response.json();
+    context.addProducts(data);
+    setProducts(data);
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   document.title = "Products";
 
@@ -25,9 +35,9 @@ const Products = () => {
   const selectCategory = (e) => {
     e.preventDefault();
     if (e.target.value === "all") {
-      setProducts(productDetails);
+      setProducts(context.products);
     } else {
-      products = productDetails;
+      products = context.products;
       setProducts(
         products.filter((product) => {
           return product.category === e.target.value;

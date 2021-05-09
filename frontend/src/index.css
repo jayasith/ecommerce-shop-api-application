@@ -34,18 +34,13 @@ header {
   margin: 0 auto;
 }
 
-a {
-  text-decoration: none;
-  color: black;
-  display: inline-block;
-}
-
 ul {
   display: flex;
   list-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 !important;
 }
 
 li {
@@ -56,6 +51,9 @@ li {
 a {
   font-weight: 500;
   display: inline-block;
+  text-decoration: none !important;
+  color: black !important;
+  display: inline-block;
 }
 
 .content-section {
@@ -65,7 +63,7 @@ a {
 
 .important {
   background: #24346a;
-  color: white;
+  color: white !important;
   padding: 0.75rem 2rem;
   border: 2px solid #24346a;
   border-radius: 5px;

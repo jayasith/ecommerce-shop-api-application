@@ -36,6 +36,20 @@ const clearAllProductsFromCart = (state) => {
   };
 };
 
+const addProducts = (state, fetchedProducts) => {
+  return {
+    ...state,
+    products: fetchedProducts,
+  };
+};
+
+const setUserAuth = (state, userID) => {
+  return {
+    ...state,
+    userAuth: userID,
+  };
+};
+
 export default (state, action) => {
   switch (action.type) {
     case "ADD_TO_CART":
@@ -44,6 +58,10 @@ export default (state, action) => {
       return removeProductsFromCart(state, action.payload);
     case "CLEAR_ALL_FROM_CART":
       return clearAllProductsFromCart(state);
+    case "ADD_PRODUCTS":
+      return addProducts(state, action.payload);
+    case "SET_USER_AUTH":
+      return setUserAuth(state, action.payload);
     default:
       return state;
   }

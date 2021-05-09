@@ -1,10 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/Form.css";
+import Context from "./contexts/Context";
 
 const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   const [username, setUsername] = useState("");
@@ -14,7 +15,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   const [isAdding, setIsAdding] = useState(false);
 
   const history = useHistory();
-
+  const context = useContext(Context);
   document.title = title;
 
   const handleRegister = async (e) => {
@@ -73,8 +74,6 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
       );
 
       const authState = await response.text();
-      console.log(response);
-      console.log(authState);
 
       if (authState === "incorrect" || authState === "username doesn't exist") {
         toast.error("Your username or password is invalid");
@@ -84,8 +83,9 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
         setPassword("");
         setEmail("");
         setIsAdding(false);
-        toast.success("Login success");
-        !isSellerLogin ? history.push("/products") : history.push("/buyer");
+        console.log(authState);
+        context.setUserAuth(authState);
+        !isSellerLogin ? history.push("/products") : history.push("/additems");
       }
     } catch (error) {
       toast.error("Something went wrong!");
@@ -178,4 +178,4 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   );
 };
 
-export default RegForm;
+export default RegForm  ;
