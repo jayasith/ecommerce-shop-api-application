@@ -14,8 +14,11 @@ function AddNoForm(props) {
   const [mobileno, setMobileno] = useState("");
   const [code, setCode] = useState("");
 
+  const id = context.userAuth;
+
   const codeHandle = async (e) => {
     const mobile = { mobileno, code };
+    const order = { id, email, state, streetaddress };
 
     try {
       const mobileRespons = await fetch(`http//localhost:9090/rest/mobile`, {
@@ -25,7 +28,9 @@ function AddNoForm(props) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(mobile),
+        
       });
+      console.log(mobile);
       if (mobileRespons.ok) {
         setCode("");
         setMobileno("");
@@ -36,8 +41,9 @@ function AddNoForm(props) {
             Accept: "application/json",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(),
+          body: JSON.stringify(order),
         });
+        console.log(order);
       } else {
         toast.error("Your payment unsuccessful");
       }
@@ -81,7 +87,6 @@ function AddNoForm(props) {
           <MdLockOutline className="lockIcon2" />
           <br />
           <button className="backBt" onClick={() => setSend(true)}>
-            back
           </button>
           <button onClick={(e) => codeHandle(e)} className="submitBt">
             submit

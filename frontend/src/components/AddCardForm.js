@@ -9,7 +9,9 @@ function AddCardForm(props) {
   console.log(props.delivery);
   const context = useContext(Context);
 
-  const { city, email, state, streetaddress } = props.delivery;
+
+  const { city, state, streetaddress } = props.delivery;
+  const id = context.userAuth;
 
   const [cardno, setCardno] = useState("");
   const [date, setDate] = useState("");
@@ -18,29 +20,30 @@ function AddCardForm(props) {
   const cardhandle = async (e) => {
     e.preventDefault();
     const card = { cardno, date, cvc };
-
+    const order = { id, city, state, streetaddress}
     try {
-      const cardResponse = await fetch(`http://localhost:9090/card/`, {
+      const cardResponse = await fetch(`http://localhost:9090/rest/order/`, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(card),
+        body: JSON.stringify(order),
       });
       if (cardResponse.ok) {
         setCardno("");
         setDate("");
         setCvc("");
         toast.success("Your payment successful");
-        const orderResponse = await fetch(`http://localhost:9090/rest/card/`, {
+        const orderResponse = await fetch(`http://localhost:9090/rest/`, {
           method: "POST",
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(card),
+          body: JSON.stringify(),
         });
+        console.log(order);
       } else {
         toast.error("Something went wrong!");
       }

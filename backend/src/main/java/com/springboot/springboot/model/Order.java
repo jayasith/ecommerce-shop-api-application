@@ -15,7 +15,6 @@ public class Order {
 
     @Id
     private String id;
-    private String sellerid;
     private String buyerid;
     private String location;
     private List<String> products;
