@@ -5,6 +5,7 @@ import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -15,13 +16,11 @@ public class Order {
 
     @Id
     private String id;
-    private String sellerid;
     private String buyerid;
-    private String location;
-    private List<String> products;
-    private String zip;
+    private ArrayList<Product> products;
+    private String state;
     private String city;
-    private String address;
+    private String streetaddress;
     private String date;
     private String status;
 
