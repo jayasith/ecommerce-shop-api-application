@@ -1,9 +1,9 @@
 import React, { useReducer, useState } from "react";
 
-import CartContext from "./CartContext";
+import Context from "./Context";
 import Reducer from "./Reducer";
 
-const CartState = (props) => {
+const State = (props) => {
   const [state, dispatch] = useReducer(Reducer, { carts: [], products: [] });
 
   const addProductToCart = (product) => {
@@ -31,7 +31,7 @@ const CartState = (props) => {
   const [address, setUpdate] = useState([{ name: "name" }]);
 
   return (
-    <CartContext.Provider
+    <Context.Provider
       value={{
         products: state.products,
         addProductToCart: addProductToCart,
@@ -43,8 +43,8 @@ const CartState = (props) => {
       }}
     >
       {props.children}
-    </CartContext.Provider>
+    </Context.Provider>
   );
 };
 
-export default CartState;
+export default State;

@@ -9,7 +9,7 @@ import "./styles/DeliveryForm.css";
 import "react-toastify/dist/ReactToastify.css";
 
 import "./styles/Form.css";
-import CartContext from "./contexts/CartContext";
+import Context from "./contexts/Context";
 const DeliveryForm = ({ title, isDeliveryForm }) => {
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");

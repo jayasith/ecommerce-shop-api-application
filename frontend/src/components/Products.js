@@ -3,13 +3,13 @@ import { ToastContainer } from "react-toastify";
 import ProductCard from "./ProductCard";
 
 import "./styles/Product.css";
-import CartContext from "./contexts/CartContext";
+import Context from "./contexts/Context";
 
 const Products = () => {
   let [products, setProducts] = useState([]);
   const [searchValue, setSearchValue] = useState("");
 
-  const context = useContext(CartContext);
+  const context = useContext(Context);
 
   const handleAddProduct = (product) => {
     context.addProductToCart(product);
