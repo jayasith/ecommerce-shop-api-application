@@ -3,7 +3,7 @@
 .Order {
   margin: auto auto;
   font-family: "Quicksand";
-  position: fixed; /* Stay in place */
+  position: absolute; /* Stay in place */
   z-index: 1; /* Sit on top */
   
   -webkit-animation-name: fadeIn; /* Fade in the background */
@@ -71,7 +71,7 @@
   font-family: "Quicksand";
   font-size: 15px;
 }
-.table th {
+.table .head {
   background-color: #24346a;
   width: 250px;
   height: 50px;

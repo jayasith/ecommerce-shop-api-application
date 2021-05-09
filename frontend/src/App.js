@@ -33,9 +33,7 @@ function App() {
         <Route path="/products">
           <Products />
         </Route>
-        <Route path="/order">
-          <Order />
-        </Route>
+
         <Route path="/orders">
           <OrderList />
         </Route>
