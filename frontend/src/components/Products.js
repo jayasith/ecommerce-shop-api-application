@@ -18,8 +18,7 @@ const Products = () => {
   const getProducts = async () => {
     const response = await fetch("http://localhost:9090/rest/products");
     const data = await response.json();
-    console.log(response);
-    console.log(data);
+    context.addProducts(data);
     setProducts(data);
   };
 
@@ -35,10 +34,10 @@ const Products = () => {
 
   const selectCategory = (e) => {
     e.preventDefault();
-    setProducts(products);
     if (e.target.value === "all") {
-      setProducts(products);
+      setProducts(context.products);
     } else {
+      products = context.products;
       setProducts(
         products.filter((product) => {
           return product.category === e.target.value;

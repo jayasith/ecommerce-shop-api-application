@@ -1,11 +1,10 @@
 import React, { useReducer, useState } from "react";
 
-import products from "../../data/productDetails";
 import CartContext from "./CartContext";
 import Reducer from "./Reducer";
 
 const CartState = (props) => {
-  const [state, dispatch] = useReducer(Reducer, { carts: [] });
+  const [state, dispatch] = useReducer(Reducer, { carts: [], products: [] });
 
   const addProductToCart = (product) => {
     dispatch({
@@ -24,14 +23,20 @@ const CartState = (props) => {
       type: "CLEAR_ALL_FROM_CART",
     });
   };
+
+  const addProducts = (fetchedProducts) => {
+    dispatch({ type: "ADD_PRODUCTS", payload: fetchedProducts });
+  };
+
   const [address, setUpdate] = useState([{ name: "name" }]);
 
   return (
     <CartContext.Provider
       value={{
-        products: products,
+        products: state.products,
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,
+        addProducts: addProducts,
         delivary: [address, setUpdate],
         clearCart: clearCart,
         carts: state.carts,
