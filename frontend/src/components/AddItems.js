@@ -1,11 +1,12 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import "./styles/DeliveryForm.css";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/Form.css";
+import Context from "./contexts/Context";
 
 const AddItems = ({ fetchEndpoint, title, isAddItems }) => {
   const [name, setItem] = useState("");
@@ -16,7 +17,8 @@ const AddItems = ({ fetchEndpoint, title, isAddItems }) => {
   const [isAdding, setIsAdding] = useState(false);
 
   const history = useHistory();
-
+  const context = useContext(Context);
+  console.log(context);
   document.title = title;
 
   const handleItem = async (e) => {

@@ -1,10 +1,11 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/Form.css";
+import Context from "./contexts/Context";
 
 const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   const [username, setUsername] = useState("");
@@ -14,7 +15,7 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   const [isAdding, setIsAdding] = useState(false);
 
   const history = useHistory();
-
+  const context = useContext(Context);
   document.title = title;
 
   const handleRegister = async (e) => {
@@ -82,6 +83,8 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
         setPassword("");
         setEmail("");
         setIsAdding(false);
+        console.log(authState);
+        context.setUserAuth(authState);
         !isSellerLogin ? history.push("/products") : history.push("/additems");
       }
     } catch (error) {

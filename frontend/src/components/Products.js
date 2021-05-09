@@ -10,7 +10,7 @@ const Products = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const context = useContext(Context);
-
+  console.log(context);
   const handleAddProduct = (product) => {
     context.addProductToCart(product);
   };

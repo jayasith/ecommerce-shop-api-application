@@ -28,18 +28,24 @@ const State = (props) => {
     dispatch({ type: "ADD_PRODUCTS", payload: fetchedProducts });
   };
 
+  const setUserAuth = (userID) => {
+    dispatch({ type: "SET_USER_AUTH", payload: userID });
+  };
+
   const [address, setUpdate] = useState([{ name: "name" }]);
 
   return (
     <Context.Provider
       value={{
         products: state.products,
+        carts: state.carts,
+        userAuth: state.userAuth,
         addProductToCart: addProductToCart,
         removeProductFromCart: removeProductFromCart,
-        addProducts: addProducts,
-        delivary: [address, setUpdate],
         clearCart: clearCart,
-        carts: state.carts,
+        addProducts: addProducts,
+        setUserAuth: setUserAuth,
+        delivary: [address, setUpdate],
       }}
     >
       {props.children}
