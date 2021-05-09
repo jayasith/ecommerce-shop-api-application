@@ -11,18 +11,12 @@ const OrderList = () => {
   const [orders, setOrders] = useState(null);
   const [Clicked, setClicked] = useState(null);
 
-  const [orders, setOrders] = useState([]);
-  const [Clicked, setClicked] = useState(null);
-
   const [show, setShow] = useState(false);
   const [id, setId] = useState(null);
 
   const handleClose = () => setShow(false);
 
-  const handleShow = (Id) => {
-    setShow(true);
-    setId(Id);
-  };
+ 
 
   console.log(buyerid);
 
