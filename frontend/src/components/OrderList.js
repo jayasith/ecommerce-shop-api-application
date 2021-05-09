@@ -5,15 +5,16 @@ import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const OrderList = () => {
-  const [orders, setOrders] = useState(null);
-  const [Clicked , setClicked] = useState(null);
+  const [orders, setOrders] = useState([]);
+  const [Clicked, setClicked] = useState(null);
   const [show, setShow] = useState(false);
-  const [id,setId] = useState(null);
+  const [id, setId] = useState(null);
 
   const handleClose = () => setShow(false);
-  const handleShow = (Id) => {setShow(true);  setId(Id);};
-
-  
+  const handleShow = (Id) => {
+    setShow(true);
+    setId(Id);
+  };
 
   useEffect(() => {
     fetch("http://localhost:8000/orders")
