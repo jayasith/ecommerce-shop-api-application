@@ -3,15 +3,15 @@
     {
       "id" : "1" ,
       "location" : "Kaluthara",
-      "zip" : "1200",
+      "state" : "1200",
       "city" : "Nagoda",
-      "address" : "14/7,Samagi uyana,Nagoda.",
+      "streetaddress" : "14/7,Samagi uyana,Nagoda.",
       "date": " 2021-05-06",
       "status" : "Pending",
       "sellerId" :"001",
       
     
-      "Products" :[{
+      "products" :[{
         "id": "1",
         "imgurl": "https://image-cdn.beforward.jp/autoparts/original/202005/36083917/00000008058492_a01.jpg",
         "name": "Surface Headphones 2",
