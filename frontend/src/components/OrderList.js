@@ -9,17 +9,27 @@ const OrderList = () => {
   const context = useContext(Context);
   const buyerid = context.userAuth;
   const [orders, setOrders] = useState(null);
-  const [Clicked , setClicked] = useState(null);
+  const [Clicked, setClicked] = useState(null);
+
+  const [orders, setOrders] = useState([]);
+  const [Clicked, setClicked] = useState(null);
+
   const [show, setShow] = useState(false);
-  const [id,setId] = useState(null);
+  const [id, setId] = useState(null);
 
   const handleClose = () => setShow(false);
-  const handleShow = (Id) => {setShow(true);  setId(Id);};
 
-  
-console.log(buyerid);
+  const handleShow = (Id) => {
+    setShow(true);
+    setId(Id);
+  };
 
+  console.log(buyerid);
 
+  const handleShow = (Id) => {
+    setShow(true);
+    setId(Id);
+  };
 
   useEffect(() => {
     fetch(`http://localhost:9090/rest/order/${buyerid}`)
