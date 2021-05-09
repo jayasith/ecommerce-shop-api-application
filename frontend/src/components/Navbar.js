@@ -3,13 +3,13 @@ import { Link, useLocation } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
 
 import Cart from "./Cart";
-import CartContext from "./contexts/CartContext";
+import Context from "./contexts/Context";
 
 const Navbar = () => {
   const location = useLocation();
   const [isToggle, setIsToggle] = useState(false);
 
-  const context = useContext(CartContext);
+  const context = useContext(Context);
 
   return (
     <header>

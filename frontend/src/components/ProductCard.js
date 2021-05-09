@@ -14,7 +14,7 @@ const ProductCard = ({ product, addProductToCart }) => {
       <p>{product.description}</p>
       <div className="action-container">
         <p className="price" id="price">
-          LKR {product.price}
+          LKR {product.itemprice}
         </p>
         <button
           className="important buy-now"

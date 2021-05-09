@@ -1,12 +1,12 @@
-import React,{useContext} from 'react';
+import React, { useContext } from "react";
 import "./styles/Payment.css";
-import CartContext from "./contexts/CartContext";
+import Context from "./contexts/Context";
 
 function Pricedetails(){
 
     let item = 0;
     let subtotal = 0;
-    const context = useContext(CartContext);
+    const context = useContext(Context);
     console.log(context);
     return(
         <div>
@@ -35,9 +35,13 @@ function Pricedetails(){
                 <br/>
                 <label className="total">TOTAL(SLR)</label>
                 <label className="totPrice">{subtotal + 1000}</label>
-            </form>
-        </div>
-    )
+        <hr />
+        <br />
+        <label className="total">TOTAL(SLR)</label>
+        <label className="totPrice">22</label>
+      </form>
+    </div>
+  );
 }
 
 export default Pricedetails;
