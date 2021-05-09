@@ -175,4 +175,4 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   );
 };
 
-export default RegForm;
+export default RegForm  ;
