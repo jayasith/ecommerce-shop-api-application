@@ -71,7 +71,6 @@ public class Controller {
     @PostMapping("/products")
     public String addProduct(@RequestBody Product product){
         productRepo.save(product);
-
         return product.getId();
     }
 
@@ -80,10 +79,9 @@ public class Controller {
         return productRepo.findBySellerId(id);
     }
 
-    @PutMapping("/products/{id}")
+    @PutMapping("/products")
     public String updateProduct(@RequestBody Product product){
         productRepo.insert(product);
-
         return  "product update";
     }
 

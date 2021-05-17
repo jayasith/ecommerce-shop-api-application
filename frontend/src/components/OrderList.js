@@ -1,23 +1,32 @@
 import "./styles/Order.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Order from "./Order";
 import { Button, Modal } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Context from "./contexts/Context";
 
 const OrderList = () => {
-  const [orders, setOrders] = useState([]);
+  const context = useContext(Context);
+  const buyerid = context.userAuth;
+  const [orders, setOrders] = useState(null);
   const [Clicked, setClicked] = useState(null);
+
   const [show, setShow] = useState(false);
   const [id, setId] = useState(null);
 
   const handleClose = () => setShow(false);
+
+ 
+
+  console.log(buyerid);
+
   const handleShow = (Id) => {
     setShow(true);
     setId(Id);
   };
 
   useEffect(() => {
-    fetch("http://localhost:8000/orders")
+    fetch(`http://localhost:9090/rest/order/${buyerid}`)
       .then((res) => {
         return res.json();
       })
@@ -36,7 +45,7 @@ const OrderList = () => {
             <th>Address</th>
             <th>Order Id</th>
             <th> Order Status</th>
-            <th> Seller</th>
+            <th> State</th>
             <th></th>
           </tr>
         </thead>
@@ -44,10 +53,10 @@ const OrderList = () => {
           <tbody>
             {orders.map((order) => (
               <tr className="rw" key={order.id}>
-                <td>{order.location}</td>
+                <td>{order.city}</td>
                 <td>{order.id}</td>
                 <td>{order.status}</td>
-                <td> {order.sellerId}</td>
+                <td> {order.state}</td>
                 <td>
                   <button
                     className="bttn"
