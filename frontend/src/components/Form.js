@@ -85,7 +85,9 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
         setIsAdding(false);
         console.log(authState);
         context.setUserAuth(authState);
-        !isSellerLogin ? history.push("/products") : history.push("/additems");
+        !isSellerLogin
+          ? history.push("/products")
+          : history.push("/itemeditdelete");
       }
     } catch (error) {
       toast.error("Something went wrong!");
@@ -178,4 +180,4 @@ const RegForm = ({ fetchEndpoint, title, isRegisterForm }) => {
   );
 };
 
-export default RegForm  ;
+export default RegForm;

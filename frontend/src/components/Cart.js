@@ -1,5 +1,5 @@
 import { FaTimes } from "react-icons/fa";
-import { Link } from "react-router-dom";
+
 import CartItem from "./CartItem";
 
 import "./styles/Cart.css";
