@@ -81,7 +81,7 @@ public class Controller {
 
     @PutMapping("/products")
     public String updateProduct(@RequestBody Product product){
-        productRepo.insert(product);
+        productRepo.save(product);
         return  "product update";
     }
 
