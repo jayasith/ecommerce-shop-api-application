@@ -3,9 +3,12 @@ import { useEffect, useState, useContext } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Button, Modal } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/DeliveryForm.css";
 import "./styles/Order.css";
 import "./styles/Form.css";
+import EditItems from "./EditItems";
 import Context from "./contexts/Context";
 
 const ItemEditDelete = () => {
@@ -14,6 +17,15 @@ const ItemEditDelete = () => {
   const context = useContext(Context);
   const userAuth = context.userAuth;
   const [items, setItems] = useState([]);
+
+  const [show, setShow] = useState(false);
+  const [item, setItem] = useState(null);
+  const handleClose = () => setShow(false);
+
+  const handleShow = (item) => {
+    setShow(true);
+    setItem(item);
+  };
 
   const handleDelete = (id) => {
     console.log(id);
@@ -33,7 +45,7 @@ const ItemEditDelete = () => {
         console.log(data);
         setItems(data);
       });
-  }, [handleDelete]);
+  }, []);
 
   return (
     <div className="orderList">
@@ -75,12 +87,22 @@ const ItemEditDelete = () => {
             </td>
 
             <td style={{ display: "flex" }}>
-              <button>Edit</button>
+              <button
+                className="bttn"
+                onClick={() => {
+                  handleShow(items);
+                }}
+              >
+                Edit
+              </button>
               <button onClick={() => handleDelete(item.id)}>Delete</button>
             </td>
           </tr>
         ))}
       </table>
+      <Modal className="modal" show={show} onHide={handleClose}>
+        {item && <EditItems item={item} />}
+      </Modal>
       <ToastContainer position="top-center" />
     </div>
   );

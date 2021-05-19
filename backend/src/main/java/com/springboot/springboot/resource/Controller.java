@@ -81,8 +81,9 @@ public class Controller {
 
     @PutMapping("/products")
     public String updateProduct(@RequestBody Product product){
-        productRepo.insert(product);
-        return  "product update";
+//        productRepo.insert(product);
+//        return  "product update";
+
     }
 
     @DeleteMapping("/products/{id}")
