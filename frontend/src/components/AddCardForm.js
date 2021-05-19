@@ -19,7 +19,6 @@ function AddCardForm(props) {
         `http://localhost:9090/rest/email/${buyerid}/`  
       )
        email = await respons.text();
-
     }
  
     getEmail();

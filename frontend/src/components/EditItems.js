@@ -31,6 +31,7 @@ const EditItems = ({ item, closeModel }) => {
 
     const updatedItem = {
       id: updateItem.id,
+      sellerId:updateItem.sellerId,
       name,
       category,
       description,

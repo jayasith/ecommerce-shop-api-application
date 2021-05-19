@@ -27,6 +27,8 @@ const ItemEditDelete = () => {
     setItem(item);
   };
 
+  const [itemdelete,setItemdelete] = useState(false)
+
   const handleDelete = (id) => {
     console.log(id);
     fetch(`http://localhost:9090/rest/products/${id}`, {
@@ -34,6 +36,7 @@ const ItemEditDelete = () => {
     })
       .then((response) => console.log(response))
       .then((data) => console.log(data));
+      setItemdelete(true)
   };
 
   useEffect(() => {
@@ -45,7 +48,7 @@ const ItemEditDelete = () => {
         console.log(data);
         setItems(data);
       });
-  }, [show, item]);
+  }, [show, item,itemdelete]);
 
   return (
     <div className="orderList">
