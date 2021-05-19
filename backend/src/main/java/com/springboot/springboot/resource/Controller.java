@@ -103,4 +103,10 @@ public class Controller {
         return orderRepo.findByBuyerid(id);
     }
 
+    @GetMapping("/email/{id}")
+    public String findBuyersById(@PathVariable String id){
+        Buyer buyer = buyerRepo.findBuyersById(id);
+        return buyer.getEmail();
+    }
+
 }

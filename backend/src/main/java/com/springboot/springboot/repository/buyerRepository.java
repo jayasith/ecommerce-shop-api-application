@@ -6,5 +6,6 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface buyerRepository extends MongoRepository<Buyer, String> {
 
     public  Buyer findByUsername (String username);
+    public Buyer findBuyersById(String id);
 
 }
