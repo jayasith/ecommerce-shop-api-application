@@ -45,7 +45,7 @@ const ItemEditDelete = () => {
         console.log(data);
         setItems(data);
       });
-  }, []);
+  }, [show, item]);
 
   return (
     <div className="orderList">
@@ -101,7 +101,7 @@ const ItemEditDelete = () => {
         ))}
       </table>
       <Modal className="modal" show={show} onHide={handleClose}>
-        {item && <EditItems item={item} />}
+        {item && <EditItems item={item} closeModel={setShow} />}
       </Modal>
       <ToastContainer position="top-center" />
     </div>

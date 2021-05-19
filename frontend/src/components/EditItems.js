@@ -10,22 +10,66 @@ import "./styles/Order.css";
 import "./styles/Form.css";
 import Context from "./contexts/Context";
 
-const EditItems = ({ item }) => {
+const EditItems = ({ item, closeModel }) => {
   console.log(item[0]);
+
+  let updateItem = { ...item[0] };
 
   //   let item = items.filter((item) => item.id === id);
   //   console.log(item);
   console.log(item[0].name);
-  const [name, setItem] = useState(item[0].name);
-  const [category, setCategory] = useState(item[0].category);
-  const [description, setDescription] = useState(item[0].description);
-  const [imgurl, setItemurl] = useState(item[0].imgurl);
-  const [itemprice, setItemprice] = useState(item[0].itemprice);
+  const [name, setItem] = useState(updateItem.name);
+  const [category, setCategory] = useState(updateItem.category);
+  const [description, setDescription] = useState(updateItem.description);
+  const [imgurl, setItemurl] = useState(updateItem.imgurl);
+  const [itemprice, setItemprice] = useState(updateItem.itemprice);
   const [isAdding, setIsAdding] = useState(false);
+  const history = useHistory();
 
+  const handleUpdate = async (e) => {
+    e.preventDefault();
+
+    const updatedItem = {
+      id: updateItem.id,
+      name,
+      category,
+      description,
+      imgurl,
+      itemprice,
+    };
+    console.log(updatedItem);
+    try {
+      const response = await fetch(`http://localhost:9090/rest/products/`, {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedItem),
+      });
+      console.log(response);
+
+      if (response.ok) {
+        setItem("");
+        setCategory("");
+        setDescription("");
+        setItemurl("");
+        setItemprice("");
+        closeModel(false);
+        toast.success("Product has been updated");
+        setTimeout(() => {
+          history.push("./ItemEditDelete");
+        }, 2000);
+      } else {
+        toast.error("Something went wrong!");
+      }
+    } catch (error) {
+      toast.error("Something went wrong!");
+    }
+  };
   return (
     <div class="p1" align="center">
-      <form className="addItemForm" onSubmit={(e) => handleItem(e)}>
+      <form className="addItemForm" onSubmit={(e) => handleUpdate(e)}>
         <table>
           <h1>Edit Item</h1>
           <br />
@@ -108,7 +152,7 @@ const EditItems = ({ item }) => {
             </div>
           }
         </table>
-        <button class="btn" value="SUBMIT">
+        <button class="btn" value="SUBMIT" onsu>
           SUBMIT
         </button>
       </form>
