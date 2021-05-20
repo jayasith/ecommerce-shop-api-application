@@ -19,15 +19,17 @@ const ItemEditDelete = () => {
   const [items, setItems] = useState([]);
 
   const [show, setShow] = useState(false);
-  const [item, setItem] = useState(null);
+  const [id, setId] = useState(null);
   const handleClose = () => setShow(false);
 
-  const handleShow = (item) => {
+  const handleShow = (id) => {
     setShow(true);
-    setItem(item);
+    setId(id);
   };
 
-  const [itemdelete,setItemdelete] = useState(false)
+  document.title = "Your Items";
+
+  const [itemdelete, setItemdelete] = useState(false);
 
   const handleDelete = (id) => {
     console.log(id);
@@ -36,7 +38,7 @@ const ItemEditDelete = () => {
     })
       .then((response) => console.log(response))
       .then((data) => console.log(data));
-      setItemdelete(true)
+    setItemdelete(true);
   };
 
   useEffect(() => {
@@ -48,7 +50,7 @@ const ItemEditDelete = () => {
         console.log(data);
         setItems(data);
       });
-  }, [show, item,itemdelete]);
+  }, [show, itemdelete]);
 
   return (
     <div className="orderList">
@@ -93,7 +95,7 @@ const ItemEditDelete = () => {
               <button
                 className="bttn"
                 onClick={() => {
-                  handleShow(items);
+                  handleShow(item.id);
                 }}
               >
                 Edit
@@ -103,10 +105,11 @@ const ItemEditDelete = () => {
           </tr>
         ))}
       </table>
-      <Modal className="modal" show={show} onHide={handleClose}>
-        {item && <EditItems item={item} closeModel={setShow} />}
-      </Modal>
+
       <ToastContainer position="top-center" />
+      <Modal className="modal" show={show} onHide={handleClose}>
+        {items && <EditItems items={items} id={id} closeModel={setShow} />}
+      </Modal>
     </div>
   );
 };

@@ -65,7 +65,7 @@ const AddItems = ({ fetchEndpoint, title, isAddItems }) => {
   };
 
   return (
-    <div class="p1" align="center">
+    <div class="p11" align="center">
       <form className="addItemForm" onSubmit={(e) => handleItem(e)}>
         <table>
           <h1>Add Item for sell</h1>
