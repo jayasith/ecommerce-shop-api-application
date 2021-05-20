@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/rest" name="shop" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/getproducts">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="getProducts"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/addproducts">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="addProducts"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="PUT" uri-template="/updateproducts">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="updateProducts"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="DELETE" uri-template="/deleteproducts/{IDdelete}">
+        <inSequence>
+            <property expression="get-property('uri.var.IDdelete')" name="uri.var.id" scope="default" type="STRING"/>
+            <log/>
+            <send>
+                <endpoint key="deleteProducts"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/addorders">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="addOrders"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/getorder/{getID}">
+        <inSequence>
+            <property expression="get-property('uri.var.getID')" name="uri.var.oid" scope="default" type="STRING"/>
+            <log/>
+            <send>
+                <endpoint key="getOrder"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/getemail/{getEID}">
+        <inSequence>
+            <property expression="get-property('uri.var.getEID')" name="uri.var.eid" scope="default" type="STRING"/>
+            <log/>
+            <send>
+                <endpoint key="getEmail"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/addsellers">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="addSellers"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/addbuyers">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="addBuyers"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/sellerlog">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="sellerLogin"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+    <resource methods="POST" uri-template="/buyerlog">
+        <inSequence>
+            <log/>
+            <send>
+                <endpoint key="buyerLogin"/>
+            </send>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/getproduct/{getPID}">
+        <inSequence>
+            <property expression="get-property('uri.var.getPID')" name="uri.var.pid" scope="default" type="STRING"/>
+            <log/>
+            <send>
+                <endpoint key="getProduct"/>
+            </send>
+        </inSequence>
+        <outSequence>
+            <send/>
+        </outSequence>
+        <faultSequence/>
+    </resource>
+</api>

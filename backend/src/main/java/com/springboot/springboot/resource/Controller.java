@@ -93,7 +93,6 @@ public class Controller {
 
     @PostMapping("/order")
     public String addOrder(@RequestBody Order order){
-
         orderRepo.save(order);
         return "order added";
     }
