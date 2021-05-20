@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="shop" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/shop.xml</file>
+    </artifact>
+    <artifact name="getProducts" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getProducts.xml</file>
+    </artifact>
+    <artifact name="addProducts" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/addProducts.xml</file>
+    </artifact>
+    <artifact name="updateProducts" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/updateProducts.xml</file>
+    </artifact>
+    <artifact name="deleteProducts" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/deleteProducts.xml</file>
+    </artifact>
+    <artifact name="addOrders" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/addOrders.xml</file>
+    </artifact>
+    <artifact name="getOrder" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getOrder.xml</file>
+    </artifact>
+    <artifact name="getEmail" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getEmail.xml</file>
+    </artifact>
+    <artifact name="Payment" groupId="com.example.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/Payment.xml</file>
+    </artifact>
+    <artifact name="addSellers" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/addSellers.xml</file>
+    </artifact>
+    <artifact name="addBuyers" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/addBuyers.xml</file>
+    </artifact>
+    <artifact name="sellerLogin" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/sellerLogin.xml</file>
+    </artifact>
+    <artifact name="buyerLogin" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/buyerLogin.xml</file>
+    </artifact>
+    <artifact name="getProduct" groupId="com.example.endpoint" version="1.0.0" type="synapse/endpoint" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/endpoints/getProduct.xml</file>
+    </artifact>
+</artifacts>

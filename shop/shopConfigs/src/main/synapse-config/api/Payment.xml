@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/payment" name="Payment" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/card">
+        <inSequence>
+            <payloadFactory media-type="text">
+                <format>payment successful</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/phone">
+        <inSequence>
+            <payloadFactory media-type="text">
+                <format>payment successful</format>
+                <args/>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>
