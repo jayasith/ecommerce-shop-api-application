@@ -51,13 +51,15 @@ const ItemEditDelete = () => {
 	}, [show, itemdelete]);
 
 	return (
-		<div className="orderList">
-			<Link to="/additems">Add item</Link>
+		<div className="orderList" style={{ textAlign: "center" }}>
+			<Link to="/additems">
+				<button className="important">Add item </button>
+			</Link>
 			<br></br>
 			<table className="table">
 				<tr className="head">
 					<th>
-						<td>product name</td>
+						<td>Product name</td>
 					</th>
 					<th>
 						<td>category</td>
