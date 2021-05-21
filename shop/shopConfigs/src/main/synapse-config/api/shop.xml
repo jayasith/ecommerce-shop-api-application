@@ -130,7 +130,9 @@
                 <endpoint key="buyerLogin"/>
             </send>
         </inSequence>
-        <outSequence/>
+        <outSequence>
+            <send/>
+        </outSequence>
         <faultSequence/>
     </resource>
     <resource methods="GET" uri-template="/getproduct/{getPID}">
