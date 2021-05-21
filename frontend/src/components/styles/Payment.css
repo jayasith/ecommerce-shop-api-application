@@ -1,108 +1,105 @@
-.paymentform{
-    border-radius: 5px;
-    background-color: #ffff;
-    padding: 20px;
-    box-shadow: 0px  2.5px 5px rgb(0,0,0,5);
-    width: 400px;
-    margin-top: 100px;
-    margin-left: 1190px;
-    position: absolute;
-    top: 10px;
-
+.paymentform {
+	border-radius: 5px;
+	background-color: #ffff;
+	padding: 20px;
+	box-shadow: 0px 2.5px 5px rgb(0, 0, 0, 5);
+	width: 400px;
+	margin-top: 250px;
+	margin-left: 900px;
+	position: absolute;
+	top: 10px;
 }
-.subPrice{
-    position: absolute;
-    right: 25px;
-
+.subPrice {
+	position: absolute;
+	right: 25px;
 }
 
-.os{
-    font-size: 30px;
-    margin-top: 0px;
-    padding-bottom: 5px;
+.os {
+	font-size: 30px;
+	margin-top: 0px;
+	padding-bottom: 5px;
 }
 
-.fDiv{
-    font-size: 17px;
+.fDiv {
+	font-size: 17px;
 }
 
-.totPrice{
-    position: absolute;
-    right: 25px;
-    font-weight: bold;
-    font-size: 25px;
-   
+.totPrice {
+	position: absolute;
+	right: 25px;
+	font-weight: bold;
+	font-size: 25px;
 }
 
-.total{
-    font-size: 20px;
-    position: relative;
-    font-weight: bold;
-    top: 6px;
+.total {
+	font-size: 20px;
+	position: relative;
+	font-weight: bold;
+	top: 6px;
 }
 
-.payform{
-    width: 1000px;
-    margin-left: 40px;
-    margin-top: 100px;
+.payform {
+	width: 1000px;
+	margin-left: 40px;
+	margin-top: 100px;
 }
 
-.payTitle{
-    font-size: 50px;
+.payTitle {
+	font-size: 50px;
 }
 
-.payOpp{
-    font-size: 30px;
-    padding: 20px;
+.payOpp {
+	font-size: 30px;
+	padding: 20px;
 }
 
-.cdBt{
-    margin-top: 50px;
-    padding: 10px;
-    margin-left: 80px;
-    margin-bottom: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
-    background: #24346a;
-    border-radius: 6px;
-    color: white;
-    font-weight: bold;
+.cdBt {
+	margin-top: 50px;
+	padding: 10px;
+	margin-left: 80px;
+	margin-bottom: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+	background: #24346a;
+	border-radius: 6px;
+	color: white;
+	font-weight: bold;
 }
 
-.cardImg{
-    position: absolute;
-    left: 500px;
-    width: 400px;
+.cardImg {
+	position: absolute;
+	left: 550px;
+	width: 400px;
 }
 
-.pnBt{
-    margin-top: 80px;
-    padding: 10px;
-    margin-left: 55px;
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-bottom: 100px;
-    border-radius: 6px;
-    color: white;
-    background: #24346a;
-    font-weight: bold;
+.pnBt {
+	margin-top: 80px;
+	padding: 10px;
+	margin-left: 55px;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 100px;
+	border-radius: 6px;
+	color: white;
+	background: #24346a;
+	font-weight: bold;
 }
 
-.ispImg{
-    position: absolute;
-    left: 585px;
-    width: 250px;
+.ispImg {
+	position: absolute;
+	left: 585px;
+	width: 250px;
 }
 
-.productImg{
-    width:50px;
-    height: 50px;
+.productImg {
+	width: 50px;
+	height: 50px;
 }
 
-.cal{
-    display: none;
+.cal {
+	display: none;
 }
 
-.peoductName{
-    margin-left: 20px;
+.peoductName {
+	margin-left: 20px;
 }

@@ -14,7 +14,7 @@ const Navbar = () => {
 	return (
 		<header>
 			<div className="nav-container">
-				<h4 className="shop-name">SHOP</h4>
+				<h4 className="shop-name">shop.lk</h4>
 				<nav>
 					<ul>
 						<li>
