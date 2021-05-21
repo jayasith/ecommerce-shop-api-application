@@ -10,19 +10,17 @@ import "./styles/Order.css";
 import "./styles/Form.css";
 import Context from "./contexts/Context";
 
-const EditItems = ({ item, closeModel }) => {
+const EditItems = ({ items, id, closeModel }) => {
+  // let updateItem = { ...item[0] };
+
+  let item = items.filter((item) => item.id === id);
   console.log(item[0]);
-
-  let updateItem = { ...item[0] };
-
-  //   let item = items.filter((item) => item.id === id);
   //   console.log(item);
-  console.log(item[0].name);
-  const [name, setItem] = useState(updateItem.name);
-  const [category, setCategory] = useState(updateItem.category);
-  const [description, setDescription] = useState(updateItem.description);
-  const [imgurl, setItemurl] = useState(updateItem.imgurl);
-  const [itemprice, setItemprice] = useState(updateItem.itemprice);
+  const [name, setItem] = useState(item[0].name);
+  const [category, setCategory] = useState(item[0].category);
+  const [description, setDescription] = useState(item[0].description);
+  const [imgurl, setItemurl] = useState(item[0].imgurl);
+  const [itemprice, setItemprice] = useState(item[0].itemprice);
   const [isAdding, setIsAdding] = useState(false);
   const history = useHistory();
 
@@ -30,8 +28,8 @@ const EditItems = ({ item, closeModel }) => {
     e.preventDefault();
 
     const updatedItem = {
-      id: updateItem.id,
-      sellerId:updateItem.sellerId,
+      id: item[0].id,
+      sellerId: item[0].sellerId,
       name,
       category,
       description,
