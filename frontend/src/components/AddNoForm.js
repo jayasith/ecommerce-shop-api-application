@@ -21,7 +21,7 @@ function AddNoForm(props) {
   const getEmail = async()=>{
    
       const respons = await fetch(
-        `http://localhost:9090/rest/email/${buyerid}/`  
+        `http://192.168.1.100:8280/rest/getemail/${buyerid}/`  
       )
        email = await respons.text();
 
@@ -52,24 +52,22 @@ function AddNoForm(props) {
     paymentemail();
     const mobile = { mobileno, code };
     const order = { buyerid, email,city, state,products, streetaddress };
-    console.log(order);
-    console.log(mobile);
 
     try {
-      const mobileRespons = await fetch(`http://localhost:9090/rest/order/`, {
+      const mobileRespons = await fetch(`http://192.168.1.100:8280/payment/card`, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(order),
+        body: JSON.stringify(mobile),
         
       });
       if (mobileRespons.ok) {
         setCode("");
         setMobileno("");
         toast.success("Your payment successful");
-        const orderResponse = await fetch(`http//localhost:9090/rest/`, {
+        const orderResponse = await fetch(`http://192.168.1.100:8280/rest/addorders`, {
           method: "POST",
           headers: {
             Accept: "application/json",
@@ -77,7 +75,6 @@ function AddNoForm(props) {
           },
           body: JSON.stringify(order),
         });
-        console.log(order);
       } else {
         toast.error("Your payment unsuccessful");
       }

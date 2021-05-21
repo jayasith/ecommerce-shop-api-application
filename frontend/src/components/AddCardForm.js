@@ -16,7 +16,7 @@ function AddCardForm(props) {
   const getEmail = async()=>{
    
       const respons = await fetch(
-        `http://localhost:9090/rest/email/${buyerid}/`  
+        `http://192.168.1.100:8280/rest/getemail/${buyerid}/`  
       )
        email = await respons.text();
     }
@@ -55,16 +55,15 @@ function AddCardForm(props) {
     paymentemail();
     const card = { cardno, exdate, cvc };
     const order = { buyerid, date, city, products, state, streetaddress}
-    console.log(order);
-        console.log(card);
+    
     try {
-      const cardResponse = await fetch(`http://localhost:9090/rest/order/`, {
+      const cardResponse = await fetch(`http://192.168.1.100:8280/payment/card`, {
         method: "POST",
         headers: {
           Accept: "application/json",
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(order),
+        body: JSON.stringify(card),
       });
       
       if (cardResponse.ok) {
@@ -75,13 +74,13 @@ function AddCardForm(props) {
         toast.success("Your payment successful");
         
 
-        const orderResponse = await fetch(`http://localhost:9090/rest/card`, {
+        const orderResponse = await fetch(`http://192.168.1.100:8280/rest/addorders`, {
           method: "POST",
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(),
+          body: JSON.stringify(order),
         });
         
       } else {
