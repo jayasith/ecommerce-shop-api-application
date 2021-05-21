@@ -55,10 +55,9 @@ function AddCardForm(props) {
     paymentemail();
     const card = { cardno, exdate, cvc };
     const order = { buyerid, date, city, products, state, streetaddress}
-    console.log(order);
-        console.log(card);
+    
     try {
-      const cardResponse = await fetch(`http://localhost:9090/rest/order/`, {
+      const cardResponse = await fetch(`http://localhost:9090/rest/order`, {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -72,23 +71,27 @@ function AddCardForm(props) {
         setCardno("");
         setExdate("");
         setCvc("");
-        toast.success("Your payment successful");
+        toast.success("order successful");
         
 
-        const orderResponse = await fetch(`http://localhost:9090/rest/card`, {
+        const orderResponse = await fetch(`http://192.168.1.100:8280/payment/card`, {
           method: "POST",
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify(),
+          body: JSON.stringify(card),
         });
+
+        if(orderResponse.ok){
+          toast.success("payment successful");
+        }
         
       } else {
-        toast.error("Something went wrong!");
+        toast.error("Something went wrong1!");
       }
     } catch (error) {
-      toast.error("Something went wrong!");
+      toast.error("Something went wrong2!");
     }
   };
 
