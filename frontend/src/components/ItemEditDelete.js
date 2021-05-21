@@ -51,8 +51,8 @@ const ItemEditDelete = () => {
 	}, [show, itemdelete]);
 
 	return (
-		<div className="orderList" style={{ textAlign: "center" }}>
-			<Link to="/additems">
+		<div className="orderList">
+			<Link sto="/additems">
 				<button className="important">Add item </button>
 			</Link>
 			<br></br>
