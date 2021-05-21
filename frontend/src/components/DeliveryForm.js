@@ -23,7 +23,7 @@ const DeliveryForm = ({ title, isDeliveryForm }) => {
 
 	const history = useHistory();
 
-	document.title = title;
+	document.title = "Payment";
 
 	const [delivery, setDelivery] = useState({});
 	const handleAdress = (e) => {

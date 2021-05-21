@@ -19,15 +19,20 @@ const Navbar = () => {
 					<ul>
 						<li>
 							{location.pathname === "/products" ||
-							location.pathname === "/orders" ? (
+							location.pathname === "/orders" ||
+							location.pathname === "/payment" ? (
 								<Link to="/products">Products</Link>
+							) : location.pathname === "/itemeditdelete" ||
+							  location.pathname === "/additems" ? (
+								<Link to="/itemeditdelete">Dashboard</Link>
 							) : (
 								<Link to="/">Home</Link>
 							)}
 						</li>
 						<li>
 							{location.pathname === "/products" ||
-							location.pathname === "/orders" ? (
+							location.pathname === "/orders" ||
+							location.pathname === "/payment" ? (
 								<Link to="/orders">Orders</Link>
 							) : (
 								""
@@ -61,7 +66,10 @@ const Navbar = () => {
 						)}
 						<li>
 							{location.pathname === "/products" ||
-							location.pathname === "/orders" ? (
+							location.pathname === "/orders" ||
+							location.pathname === "/payment" ||
+							location.pathname === "/itemeditdelete" ||
+							location.pathname === "/additems" ? (
 								<Link to="/" className="important">
 									Logout
 								</Link>
