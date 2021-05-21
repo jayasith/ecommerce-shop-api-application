@@ -28,10 +28,12 @@
 	align-items: center;
 }
 .p11 {
-	width: 1000px;
-	margin-left: 50px;
+	width: 1140px;
+	display: flex;
+	margin: 0 auto;
 	justify-content: center;
 	align-items: center;
+	padding-top: 4rem;
 }
 input {
 	margin-bottom: 2rem;
@@ -47,4 +49,16 @@ select {
 	padding: 0.5rem 1rem;
 	width: 50%;
 	font-size: 1rem;
+}
+
+.addItemForm {
+	padding: 3rem 2rem;
+	background: white;
+	box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
+	width: 60%;
+}
+
+.addItemForm input {
+	width: 100%;
 }

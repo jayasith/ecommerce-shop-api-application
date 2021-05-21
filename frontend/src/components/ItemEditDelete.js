@@ -12,8 +12,6 @@ import EditItems from "./EditItems";
 import Context from "./contexts/Context";
 
 const ItemEditDelete = () => {
-	const history = useHistory();
-
 	document.title = "Dashboard";
 
 	const context = useContext(Context);
