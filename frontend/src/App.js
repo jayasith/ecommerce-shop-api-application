@@ -57,18 +57,37 @@ function App() {
 						</>
 					)}
 				></Route>
-				<Route path="/additems">
-					<Navbar />
-					<AddItems isAddItem />
-				</Route>
-				<Route path="/payment">
-					<Navbar />
-					<DeliveryForm isDeliveryForm />
-				</Route>
-				<Route path="/itemeditdelete">
-					<Navbar />
-					<ItemEditDelete />
-				</Route>
+				<Route
+					path="/additems"
+					render={() => (
+						<>
+							{context.userAuth && <Navbar />}
+							{context.userAuth ? <AddItems isAddItem /> : <ErrorPage />}
+						</>
+					)}
+				></Route>
+				<Route
+					path="/payment"
+					render={() => (
+						<>
+							{context.userAuth && <Navbar />}
+							{context.userAuth ? (
+								<DeliveryForm isDeliveryForm />
+							) : (
+								<ErrorPage />
+							)}
+						</>
+					)}
+				></Route>
+				<Route
+					path="/itemeditdelete"
+					render={() => (
+						<>
+							{context.userAuth && <Navbar />}
+							{context.userAuth ? <ItemEditDelete /> : <ErrorPage />}
+						</>
+					)}
+				></Route>
 				<Route path="*" component={ErrorPage} />
 			</Switch>
 		</div>
