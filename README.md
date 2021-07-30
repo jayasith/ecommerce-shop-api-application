@@ -18,4 +18,4 @@ the system. We have used React to implement the frontend and Spring boot for the
 backend REST API. We used mongo db for the database and WSO2 enterprise integrator
 as the middleware.
 
-#### NOTE: This project is developed just for assignment purposes.
+#### NOTE❗: This project is developed just for assignment purposes.
